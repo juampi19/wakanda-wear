@@ -1,4 +1,4 @@
-import { ListaCarrito } from "@/components/carrito"
+import { ListaCarrito, ResumenOrden } from "@/components/carrito"
 import { TiendaLayout } from "@/components/layouts"
 import { Box, Button, Card, CardContent, Divider, Grid, Typography } from "@mui/material"
 
@@ -6,22 +6,24 @@ import { Box, Button, Card, CardContent, Divider, Grid, Typography } from "@mui/
 const PaginaCarrito = () => {
   return (
     <TiendaLayout titulo={'Carrito - 3'} descripcionPagina={'Carrito de compras de la tienda'}>
-      <Typography variant="h1" component={'h1'}>Carrito
+      <Typography variant="h1" component={'h1'} sx={{ mb: 2 }}>Carrito
       </Typography>
 
       <Grid container>
-        <Grid item xs={12} sm={7}>
-          <ListaCarrito />
+        <Grid item xs={12} sm={6} md={7} >
+          {/*Listado de los productos */}
+          <ListaCarrito editable/>
         </Grid>
 
-        <Grid item xs={12} sm={5}>
+        <Grid item xs={12} sm={6} md={5}>
           {/*Ordenes */}
           <Card className="summary-card">
             <CardContent>
               <Typography variant="h2">Orden</Typography>
               <Divider sx={{ my: 1 }}/>
 
-              {/*Lista de los productos */}
+              {/*Total de los productos */}
+              <ResumenOrden />
 
               <Box sx={{ mt:3 }}>
                 <Button fullWidth color="secondary" className="circular-btn">Checkout</Button>

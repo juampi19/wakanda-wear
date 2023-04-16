@@ -1,4 +1,4 @@
-import { AccountCircleOutlined, AdminPanelSettings, CategoryOutlined, ConfirmationNumberOutlined, EscalatorWarningOutlined, FemaleOutlined, LoginOutlined, MaleOutlined, SearchOutlined, VpnKeyOutlined } from "@mui/icons-material"
+import { AccountCircleOutlined, AdminPanelSettings, CategoryOutlined, ConfirmationNumberOutlined, EscalatorWarningOutlined, FemaleOutlined, Inventory2Outlined, LoginOutlined, MaleOutlined, SearchOutlined, VpnKeyOutlined } from "@mui/icons-material"
 import { Box, Divider, Drawer, IconButton, Input, InputAdornment, List, ListItem, ListItemIcon, ListItemText, ListSubheader } from "@mui/material"
 
 
@@ -103,6 +103,17 @@ export const SideMenu = () => {
                     <AdminPanelSettings/>
                 </ListItemIcon>
                 <ListItemText primary={'Usuarios'} />
+            </ListItem>
+
+            {/*Repartidor */}
+            <Divider />
+            <ListSubheader>Repartidor</ListSubheader>
+
+            <ListItem button> 
+                <ListItemIcon>
+                    <Inventory2Outlined />
+                </ListItemIcon>
+                <ListItemText primary={'Mis Ordenes'}/>
             </ListItem>
         </List>
     </Box>
