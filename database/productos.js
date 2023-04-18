@@ -22,10 +22,10 @@ export const DataInicial =  {
       ],
       inStock: 7,
       precio: 10000,
-      tallas: ['XS','S','M','L','XL','XXL'],
+      tallas: ['XS','S','M','L','XL','XXL','XXXL'],
       slug: 'polera-hombre-marvel-vinotinto',
-      tipo: 'polera',
-      tags: ['polera'],
+      tipo: 'poleras',
+      tags: ['poleras'],
       titulo: 'Polera Manga Corta Marvel',
       genero: 'hombre'
     },
@@ -39,8 +39,8 @@ export const DataInicial =  {
       precio: 9000,
       tallas: ['XS','S','M','L'],
       slug: 'polera-mc-hombre-marvel-eternals-morada',
-      tipo: 'polera',
-      tags: ['polera'],
+      tipo: 'poleras',
+      tags: ['poleras'],
       titulo: 'Polera Hombre Eternals Comic Morado Marvel',
       genero: 'hombre'
     },
@@ -54,8 +54,8 @@ export const DataInicial =  {
       precio: 12000,
       tallas: ['S','M','L'],
       slug: 'polera-hombre-vintage-comic-blanco-marvel',
-      tipo: 'polera',
-      tags: ['polera'],
+      tipo: 'poleras',
+      tags: ['poleras'],
       titulo: 'Polera Hombre Vintage Comic Blanco Marvel',
       genero: 'hombre'
     },
@@ -69,8 +69,8 @@ export const DataInicial =  {
       precio: 22000,
       tallas: ['S','M','L','XL'],
       slug: 'poleron-hombre-avengers-logo-negro-marvel',
-      tipo: 'poleron',
-      tags: ['poleron'],
+      tipo: 'polerones',
+      tags: ['polerones'],
       titulo: 'Poleron Hombre Avengers Logo Negro Marvel',
       genero: 'hombre'
     },
@@ -84,8 +84,8 @@ export const DataInicial =  {
       precio: 11000,
       tallas: ['S','M'],
       slug: 'polera-hombre-capitan-america-shield-gris-marve',
-      tipo: 'pelera',
-      tags: ['polera'],
+      tipo: 'poleras',
+      tags: ['poleras'],
       titulo: 'Polera Hombre Capitan America Shield Gris Marvel',
       genero: 'hombre'
     }
