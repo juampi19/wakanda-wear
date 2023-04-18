@@ -88,7 +88,28 @@ export const DataInicial =  {
       tags: ['poleras'],
       titulo: 'Polera Hombre Capitan America Shield Gris Marvel',
       genero: 'hombre'
+    },
+
+    {
+      descripcion: 'Por más de 60 años esta editorial nos ha entregado historias increíbles y personajes emblemáticos, de la mano y mente de los notables Stan Lee, Jack Kirby y Steve Ditko. Casa de Spiderman, Hulk, Iron Man, X-men, Cuatro fantásticos, los vengadores y muchos otros. Ahora siendo parte de Disney nos siguen sorprendiendo y emocionando con las aventuras que tanto disfrutamos.¡Bienvenidos sean al Universo de Marvel y al extraordinario mundo del Cómic!',
+      imagenes: [
+        '666709-1200-1200.jpg',
+        '666714-1200-1200.jpg',
+        '666721-1200-1200.jpg',
+        '666725-1200-1200.jpg'
+      ],
+      inStock: 12,
+      precio: 11000,
+      tallas: ['S','M','L'],
+      slug: 'polera-hombre-grogu-continues-negro-star-wars',
+      tipo: 'poleras',
+      tags: ['poleras'],
+      titulo: 'Polera Hombre Capitan America Shield Gris Marvel',
+      genero: 'hombre'
     }
+
+    
+
     
   ]
 }
