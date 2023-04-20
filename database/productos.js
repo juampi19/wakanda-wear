@@ -101,7 +101,7 @@ export const DataInicial =  {
       inStock: 12,
       precio: 11000,
       tallas: ['S','M','L'],
-      slug: 'polera-hombre-capitan-america-gris',
+      slug: 'polera-hombre-Grogu-StarWars-gris',
       tipo: 'poleras',
       tags: ['poleras'],
       titulo: 'Polera Hombre Grogu Star Wars Gris Marvel',
