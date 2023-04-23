@@ -4,7 +4,7 @@ import { red,  } from '@mui/material/colors';
 
 export const lightTheme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: 'light',
     primary: {
       main: '#1E1E1E'
     },

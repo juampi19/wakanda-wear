@@ -182,7 +182,24 @@ export const DataInicial =  {
       titulo: 'Polera Mujer Avengers Team Blanco Marvel',
       genero: 'mujer'
       
+    },
+    {
+      descripcion: 'Los Héroes más poderosos del planeta, un equipo compuesto de personajes extraordinarios; Iron Man, Capitán América, Thor, Hulk, Black Widow, Ant-man, The Wasp. Son tan poderosos que han derrotado a Loki, Ultrón, incluso al mismo Thanos, juntos nada los podrá vencer ¡Vengadores unidos!',
+      imagenes: [
+        '688827-1200-1200.jpg',
+        '688852-1200-1200.jpg'
+      ],
+      inStock: 3,
+      precio: 12990,
+      tallas: ['XS','S'],
+      slug: 'poleron-niño-avengers-fighting-gris-marvel',
+      tipo: 'polerones',
+      tags:['polerones'],
+      titulo: 'Poleron Niño Avengers Fighting Gris Marvel',
+      genero: 'hombre'
     }
+
+
 
     
 
