@@ -3,7 +3,8 @@ import React, { useMemo, useState } from 'react'
 import NextLink from 'next/link'
 
 export const CardProducto = ({ producto }) => {
-  const [isHovered, setIsHovered] = useState(false)
+  const [isHovered, setIsHovered] = useState(false);
+  const [isImagenCargada, setIsImagenCargada] = useState(false);
 
   const imagenProducto = useMemo(() => {
     return isHovered ? `productos/${producto.imagenes[1]}` : `productos/${producto.imagenes[0]}`
@@ -27,13 +28,14 @@ export const CardProducto = ({ producto }) => {
                 className='fadeIn'
                 image={imagenProducto}
                 alt={producto.titulo}
+                onLoad={ () => setIsImagenCargada( true ) }
               />
             </CardActionArea>
           </Link>
         </NextLink>
       </Card>
 
-      <Box sx={{ mt: 1 }} className="fadeIn">
+      <Box sx={{ mt: 1, display: isImagenCargada ? 'block' : 'none' }} className="fadeIn">
         <Typography fontWeight={700}>{producto.titulo}</Typography>
         <Typography fontWeight={500}>${producto.precio}</Typography>
       </Box>

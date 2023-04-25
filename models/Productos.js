@@ -43,6 +43,7 @@ const ProductoEsquema = new Schema({
 
 
 //TODO: crear indice de mongo
+ProductoEsquema.index({ titulo: 'text', tags: 'text' });
 
 
 const Producto = mongoose.models.Producto || model( 'Producto', ProductoEsquema );
