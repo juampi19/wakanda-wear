@@ -195,7 +195,7 @@ export const DataInicial =  {
       tallas: ['S','M','L','XL'],
       slug: 'poleron-mujer-black-panther-wakanda-gris-marvel',
       tipo: 'polerones',
-      tags:['polerones', 'marvel'],
+      tags:['polerones', 'marvel', 'wakanda', 'black panther'],
       titulo: 'Poleron Mujer Black Panther Wakanda Gris Marvel',
       genero: 'mujer'
 
