@@ -72,7 +72,7 @@ export const DataInicial =  {
       tipo: 'polerones',
       tags: ['polerones'],
       titulo: 'Poleron Hombre Avengers Logo Negro Marvel',
-      genero: 'hombre'
+      genero: 'nino'
     },
     {
       descripcion: 'Por más de 60 años esta editorial nos ha entregado historias increíbles y personajes emblemáticos, de la mano y mente de los notables Stan Lee, Jack Kirby y Steve Ditko. Casa de Spiderman, Hulk, Iron Man, X-men, Cuatro fantásticos, los vengadores y muchos otros. Ahora siendo parte de Disney nos siguen sorprendiendo y emocionando con las aventuras que tanto disfrutamos.¡Bienvenidos sean al Universo de Marvel y al extraordinario mundo del Cómic!',

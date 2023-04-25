@@ -1,3 +1,3 @@
 export const TIENDA_CONSTANTES = {
-  generosValidos: ['hombre', 'mujer', 'niños'],
+  generosValidos: ['hombre', 'mujer', 'nino'],
 }

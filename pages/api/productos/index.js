@@ -29,7 +29,7 @@ const obtenerProductos = async( req, res ) => {
   await db.connect();
 
   const productos = await Producto.find( condicion )
-                                  .select( 'titulo imagenes precio inStock slug -_id' )
+                                  .select( 'titulo genero imagenes precio inStock slug -_id' )
                                   .lean();
 
   await db.disconnect();

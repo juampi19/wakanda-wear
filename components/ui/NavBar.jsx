@@ -33,10 +33,10 @@ export const NavBar = () => {
             </Link>
           </NextLink>
 
-          <NextLink href={'/categoria/destacados'} passHref legacyBehavior>
+          <NextLink href={'/categoria/ninos'} passHref legacyBehavior>
             <Link>
               <Button>
-                destacados
+                niños
               </Button>
             </Link>
           </NextLink>
