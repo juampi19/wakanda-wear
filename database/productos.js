@@ -37,7 +37,7 @@ export const DataInicial =  {
       tallas: ['XS','S','M','L','XL','XXL','XXXL'],
       slug: 'polera-hombre-marvel-vinotinto',
       tipo: 'poleras',
-      tags: ['poleras'],
+      tags: ['poleras', 'marvel', 'avengers'],
       titulo: 'Polera Manga Corta Marvel',
       genero: 'hombre'
     },
@@ -53,8 +53,23 @@ export const DataInicial =  {
       tallas: ['XS','S','M','L'],
       slug: 'polera-mc-hombre-marvel-eternals-morada',
       tipo: 'poleras',
-      tags: ['poleras'],
+      tags: ['poleras', 'marvel', 'eternals'],
       titulo: 'Polera Hombre Eternals Comic Morado Marvel',
+      genero: 'hombre'
+    },
+    {
+      descripcion: 'Siempre han estado entre nosotros en silencio, observando, protegiéndonos los Deviantes durante miles de años. Ésta raza alienígena inmortal emergen como la única salvación ante un enemigo tan maligno. ¡Unete a Ikaris, Caballero Negro, Thena, Sersi, Kingo, Sprite para enfrentar esta amenaza!¡Bienvenidos sean al Universo de Marvel y al extraordinario mundo del Cómic!',
+      imagenes: [
+        '751485-800-800.png',
+        '751491-800-800.png'
+      ],
+      inStock: 10,
+      precio: 8990,
+      tallas: ['XS','S','M','L'],
+      slug: 'polera-hombre-iron-man-perfil-negro-marvel',
+      tipo: 'poleras',
+      tags: ['poleras', 'marvel', 'iron man'],
+      titulo: 'Polera Hombre Iron Man Perfil Negro Marvel',
       genero: 'hombre'
     },
     {
@@ -68,7 +83,7 @@ export const DataInicial =  {
       tallas: ['S','M','L'],
       slug: 'polera-hombre-vintage-comic-blanco-marvel',
       tipo: 'poleras',
-      tags: ['poleras'],
+      tags: ['poleras', 'marvel', 'comic'],
       titulo: 'Polera Hombre Vintage Comic Blanco Marvel',
       genero: 'hombre'
     },
@@ -83,8 +98,8 @@ export const DataInicial =  {
       tallas: ['XS','S','M','L'],
       slug: 'polera-hombre-marver-calavera-negro-marvel',
       tipo: 'poleras',
-      tags:['poleras'],
-      titulo: 'Polera Hombre Marver Calavera Negro Marvel',
+      tags:['poleras', 'marvel', 'punisher'],
+      titulo: 'Polera Hombre Marver Calavera Negro Marvel The Punisher',
       genero: 'hombre'
       
     },
@@ -99,7 +114,7 @@ export const DataInicial =  {
       tallas: ['S','M','L','XL'],
       slug: 'poleron-hombre-avengers-logo-negro-marvel',
       tipo: 'polerones',
-      tags: ['polerones'],
+      tags: ['polerones', 'marvel', 'avengers'],
       titulo: 'Poleron Hombre Avengers Logo Negro Marvel',
       genero: 'hombre'
     },
@@ -114,7 +129,7 @@ export const DataInicial =  {
       tallas: ['S','M'],
       slug: 'polera-hombre-capitan-america-shield-gris-marve',
       tipo: 'poleras',
-      tags: ['poleras'],
+      tags: ['poleras', 'marvel', 'capitan america'],
       titulo: 'Polera Hombre Capitan America Shield Gris Marvel',
       genero: 'hombre'
     },
@@ -132,7 +147,7 @@ export const DataInicial =  {
       tallas: ['S','M','L'],
       slug: 'polera-hombre-Grogu-StarWars-gris',
       tipo: 'poleras',
-      tags: ['poleras'],
+      tags: ['poleras', 'starwar', 'mandalorian'],
       titulo: 'Polera Hombre Grogu Star Wars Gris Marvel',
       genero: 'hombre'
     },
@@ -147,7 +162,7 @@ export const DataInicial =  {
       tallas: ['M','L','XL'],
       slug: 'polera-hombre-dead-pool-rostro-negro-marvel',
       tipo: 'poleras',
-      tags:['poleras'],
+      tags:['poleras', 'marvel', 'deadpool'],
       titulo: 'Polera Hombre Dead Pool Rostro Negro Marvel',
       genero: 'hombre'
 
@@ -164,8 +179,24 @@ export const DataInicial =  {
       tallas: ['M','L','XL'],
       slug: 'polera-mujer-logo-negro-marvel',
       tipo: 'poleras',
-      tags:['poleras'],
+      tags:['poleras', 'marvel'],
       titulo: 'Polera Mujer Logo Negro Marvel',
+      genero: 'mujer'
+
+    },
+    {
+      descripcion: 'Por más de 60 años esta editorial nos ha entregado historias increíbles y personajes emblemáticos, de la mano y mente de los notables Stan Lee, Jack Kirby y Steve Ditko. Casa de Spiderman, Hulk, Iron Man, X-men, Cuatro fantásticos, los vengadores y muchos otros. Ahora siendo parte de Disney nos siguen sorprendiendo y emocionando con las aventuras que tanto disfrutamos.',
+      imagenes: [
+        '739516-800-800.png',
+        '739530-800-800.png'
+      ],
+      inStock: 7,
+      precio: 19990,
+      tallas: ['S','M','L','XL'],
+      slug: 'poleron-mujer-black-panther-wakanda-gris-marvel',
+      tipo: 'polerones',
+      tags:['polerones', 'marvel'],
+      titulo: 'Poleron Mujer Black Panther Wakanda Gris Marvel',
       genero: 'mujer'
 
     },
@@ -180,7 +211,7 @@ export const DataInicial =  {
       tallas: ['M','L','XL'],
       slug: 'polera-mujer-capitan-america-super-blanco-marvel',
       tipo: 'poleras',
-      tags:['poleras'],
+      tags:['poleras', 'marvel', 'avengers', 'capitan america'],
       titulo: 'Polera Mujer Capitan America Super Blanco Marvel',
       genero: 'mujer'
 
@@ -196,7 +227,7 @@ export const DataInicial =  {
       tallas: ['M','L','XL'],
       slug: 'polera-mujer-avengers-team-blanco-marvel',
       tipo: 'poleras',
-      tags:['poleras'],
+      tags:['poleras', 'marvel', 'avengers'],
       titulo: 'Polera Mujer Avengers Team Blanco Marvel',
       genero: 'mujer'
       
@@ -212,7 +243,7 @@ export const DataInicial =  {
       tallas: ['M','L','XL'],
       slug: 'polera-mujer-grogu-cute-child-gris-star-wars',
       tipo: 'poleras',
-      tags:['poleras'],
+      tags:['poleras', 'starwar', 'mandalorian'],
       titulo: 'Polera Mujer Grogu Cute Child Gris Star Wars',
       genero: 'mujer'
       
@@ -228,7 +259,7 @@ export const DataInicial =  {
       tallas: ['S','M','L','XL'],
       slug: 'polera-mujer-avengers-colours-gris-marvel',
       tipo: 'poleras',
-      tags:['poleras'],
+      tags:['poleras', 'marvel', 'avengers'],
       titulo: 'Polera Mujer Avengers Colours Gris Marvel',
       genero: 'mujer'
       
@@ -245,7 +276,7 @@ export const DataInicial =  {
       tallas: ['S','M','L'],
       slug: 'pantalon-de-buzo-niño-spiderman-cool-multicolor-marvel',
       tipo: 'pantalones',
-      tags:['pantalones'],
+      tags:['pantalones', 'marvel', 'spiderman'],
       titulo: 'Pantalon de Buzo Niño Spiderman Cool Multicolor Marvel',
       genero: 'hombre'
       
@@ -261,7 +292,7 @@ export const DataInicial =  {
       tallas: ['S','M','L'],
       slug: 'pantalon-de-buzo-niño-spiderman-icono-araña-gris-marvel',
       tipo: 'pantalones',
-      tags:['pantalones'],
+      tags:['pantalones', 'marvel', 'spiderman'],
       titulo: 'Pantalon de Buzo Niño Spiderman Icono Araña Gris Marvel',
       genero: 'hombre'
       
@@ -277,7 +308,7 @@ export const DataInicial =  {
       tallas: ['S','M','L'],
       slug: 'polera-manga-larga-niño-spiderman-multiverse-gris-marvel',
       tipo: 'poleras',
-      tags:['poleras'],
+      tags:['poleras', 'marvel', 'spiderman'],
       titulo: 'Polera Manga Larga Niño Spiderman Multiverse Gris Marvel',
       genero: 'hombre'
       
@@ -293,7 +324,7 @@ export const DataInicial =  {
       tallas: ['S','M','L'],
       slug: 'poleron-niño-spiderman-telarañas-gris-marvel',
       tipo: 'polerones',
-      tags:['polerones'],
+      tags:['polerones', 'marvel', 'spiderman'],
       titulo: 'Poleron Niño Spiderman Telarañas Gris Marvel',
       genero: 'hombre'
       
@@ -309,8 +340,24 @@ export const DataInicial =  {
       tallas: ['S','M','L'],
       slug: 'poleron-niño-spiderman-azul-marvel',
       tipo: 'polerones',
-      tags:['polerones'],
+      tags:['polerones', 'marvel', 'spiderman'],
       titulo: 'Poleron Niño Spiderman Big S Azul Marvel',
+      genero: 'hombre'
+      
+    },
+    {
+      descripcion: 'Los Héroes más poderosos del planeta, un equipo compuesto de personajes extraordinarios; Iron Man, Capitán América, Thor, Hulk, Black Widow, Ant-man, The Wasp. Son tan poderosos que han derrotado a Loki, Ultrón, incluso al mismo Thanos, juntos nada los podrá vencer ¡Vengadores unidos!',
+      imagenes: [
+        '753209-800-800.png',
+        '753216-800-800.png'
+      ],
+      inStock: 12,
+      precio: 12990,
+      tallas: ['S','M','L'],
+      slug: 'pantalon-de-buzo-niño-avengers-team-gris-marvel',
+      tipo: 'polerones',
+      tags:['polerones', 'marvel', 'avengers'],
+      titulo: 'Pantalon de Buzo Niño Avengers Team Gris Marvel',
       genero: 'hombre'
       
     }
