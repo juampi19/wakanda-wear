@@ -34,3 +34,16 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
+
+.shadow {
+  box-shadow: 0px 3px 3px 3px  rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+@media( min-width: 768px ) {
+  .shadow {
+    box-shadow: none;
+    padding: 0;
+  }
+}

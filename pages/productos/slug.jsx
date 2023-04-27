@@ -15,7 +15,7 @@ const slug = () => {
           <SlideShowProductos imagenes={producto.imagenes}/>
         </Grid>
 
-        <Grid item xs={12} sm={5}>
+        <Grid item xs={12} sm={5} className="shadow">
           <Box display={'flex'} flexDirection={'column'} marginTop={'50px'}>
 
             {/**titulos */}
@@ -34,7 +34,7 @@ const slug = () => {
             </Box>
 
             {/*Agregar al carrito */}
-            <Button color="secondary" className="circular-btn">
+            <Button color="secondary" className="circular-btn" >
               Agregar al carrito
             </Button>
 

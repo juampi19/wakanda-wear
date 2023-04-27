@@ -14,7 +14,7 @@ export const NavBar = () => {
 
 
   return (
-    <AppBar>
+    <AppBar >
       <Toolbar>
         <NextLink href={'/'} passHref legacyBehavior>
           <Link display={'flex'} alignItems={'center'}>
@@ -26,11 +26,11 @@ export const NavBar = () => {
         {/*flex */}
         <Box flex={'1'}/>
 
-        <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+        <Box sx={{ display: { xs: 'none', md: 'block' } }}>
           <NextLink href={'/categoria/hombres'} passHref legacyBehavior>
             <Link>
               <Button color={ asPath === '/categoria/hombres' ? 'primary' : 'white' }>
-                Hombres
+                Wakanda Men
               </Button>
             </Link>
           </NextLink>
@@ -38,7 +38,7 @@ export const NavBar = () => {
           <NextLink href={'/categoria/mujeres'} passHref legacyBehavior>
             <Link>
               <Button color={ asPath === '/categoria/mujeres' ? 'primary' : 'white' }>
-                Mujeres
+                Wakanda Women
               </Button>
             </Link>
           </NextLink>
@@ -46,7 +46,7 @@ export const NavBar = () => {
           <NextLink href={'/categoria/ninos'} passHref legacyBehavior>
             <Link>
               <Button color={ asPath === '/categoria/ninos' ? 'primary' : 'white' }>
-                niños
+                Wakanda Kids
               </Button>
             </Link>
           </NextLink>

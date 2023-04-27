@@ -9,7 +9,12 @@ export const CardProducto = ({ producto }) => {
   const imagenProducto = useMemo(() => {
     return isHovered ? `/productos/${producto.imagenes[1]}` : `/productos/${producto.imagenes[0]}`
 
-  }, [isHovered, producto.imagenes])
+  }, [isHovered, producto.imagenes]);
+
+  const formatPrice = new Intl.NumberFormat('es-CL', {
+    style: 'currency',
+    currency: 'CLP'
+  });
 
   return (
     <Grid
@@ -36,8 +41,8 @@ export const CardProducto = ({ producto }) => {
       </Card>
 
       <Box sx={{ mt: 1, display: isImagenCargada ? 'block' : 'none' }} className="fadeIn">
-        <Typography fontWeight={700}>{producto.titulo}</Typography>
-        <Typography fontWeight={500}>${producto.precio}</Typography>
+        <Typography fontWeight={700} >{producto.titulo}</Typography>
+        <Typography fontWeight={500}>{formatPrice.format( producto.precio )}</Typography>
       </Box>
     </Grid>
   )

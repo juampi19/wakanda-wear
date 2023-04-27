@@ -2,8 +2,8 @@ import { UIContext } from "@/context";
 import { AccountCircleOutlined, AdminPanelSettings, CategoryOutlined, ConfirmationNumberOutlined, EscalatorWarningOutlined, FemaleOutlined, Inventory2Outlined, LoginOutlined, MaleOutlined, SearchOutlined, VpnKeyOutlined } from "@mui/icons-material"
 import { Box, Divider, Drawer, IconButton, Input, InputAdornment, Link, List, ListItem, ListItemIcon, ListItemText, ListSubheader } from "@mui/material";
 import { useContext } from "react";
-import NextLink from 'next/link';
 import { useRouter } from "next/router";
+
 
 
 
@@ -16,8 +16,8 @@ export const SideMenu = () => {
 
 
     const navegarSeccion = (url) => {
-
         mostrarSlideMenu();
+
         router.push( url );
     }
 
@@ -27,7 +27,7 @@ export const SideMenu = () => {
     return (
         <Drawer
             open={isMenuOpen}
-            onClick={mostrarSlideMenu}
+            onClose={mostrarSlideMenu}
             anchor='right'
             sx={{ backdropFilter: 'blur(4px)', transition: 'all 0.5s ease-out' }}
         >
@@ -66,32 +66,36 @@ export const SideMenu = () => {
                     </ListItem>
 
 
-                    <ListItem button sx={{ display: { xs: '', sm: 'none' } }}
+                    <ListItem button sx={{ display: { xs: '', md: 'none' } }}
                         onClick={ () => navegarSeccion('/categoria/hombres') }
                     >
                         <ListItemIcon>
                             <MaleOutlined />
                         </ListItemIcon>
-                        <ListItemText primary={'Hombres'} />
+                        <ListItemText primary={'Wakanda Men'} />
                     </ListItem>
 
 
 
-                    <ListItem button sx={{ display: { xs: '', sm: 'none' } }}>
+                    <ListItem button sx={{ display: { xs: '', md: 'none' } }}
+                        onClick={ () => navegarSeccion( '/categoria/mujeres' ) }
+                    >
                         <ListItemIcon>
                             <FemaleOutlined />
                         </ListItemIcon>
-                        <ListItemText primary={'Mujeres'} />
+                        <ListItemText primary={'Wakanda Women'} />
                     </ListItem>
 
 
 
 
-                    <ListItem button sx={{ display: { xs: '', sm: 'none' } }}>
+                    <ListItem button sx={{ display: { xs: '', md: 'none' } }}
+                        onClick={ () => navegarSeccion( '/categoria/ninos' ) }
+                    >
                         <ListItemIcon>
                             <EscalatorWarningOutlined />
                         </ListItemIcon>
-                        <ListItemText primary={'Niños'} />
+                        <ListItemText primary={'Wakanda Kids'} />
                     </ListItem>
 
 
