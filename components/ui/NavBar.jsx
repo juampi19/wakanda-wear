@@ -1,8 +1,18 @@
+import { UIContext } from '@/context'
 import { SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material'
 import { AppBar, Badge, Box, Button, IconButton, Link, Toolbar, Typography } from '@mui/material'
 import NextLink from 'next/link'
+import { useRouter } from 'next/router'
+import { useContext } from 'react'
 
 export const NavBar = () => {
+
+
+  const {asPath} = useRouter();
+  
+  const {isMenuOpen, mostrarSlideMenu} = useContext( UIContext );
+
+
   return (
     <AppBar>
       <Toolbar>
@@ -19,7 +29,7 @@ export const NavBar = () => {
         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
           <NextLink href={'/categoria/hombres'} passHref legacyBehavior>
             <Link>
-              <Button>
+              <Button color={ asPath === '/categoria/hombres' ? 'primary' : 'white' }>
                 Hombres
               </Button>
             </Link>
@@ -27,7 +37,7 @@ export const NavBar = () => {
 
           <NextLink href={'/categoria/mujeres'} passHref legacyBehavior>
             <Link>
-              <Button>
+              <Button color={ asPath === '/categoria/mujeres' ? 'primary' : 'white' }>
                 Mujeres
               </Button>
             </Link>
@@ -35,7 +45,7 @@ export const NavBar = () => {
 
           <NextLink href={'/categoria/ninos'} passHref legacyBehavior>
             <Link>
-              <Button>
+              <Button color={ asPath === '/categoria/ninos' ? 'primary' : 'white' }>
                 niños
               </Button>
             </Link>
@@ -59,7 +69,7 @@ export const NavBar = () => {
             </Link>
           </NextLink>
 
-          <Button>
+          <Button onClick={ mostrarSlideMenu }>
             Menu
           </Button>
       </Toolbar>

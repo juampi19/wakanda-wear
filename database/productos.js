@@ -278,7 +278,7 @@
       tipo: 'pantalones',
       tags:['pantalones', 'marvel', 'spiderman'],
       titulo: 'Pantalon de Buzo Niño Spiderman Cool Multicolor Marvel',
-      genero: 'hombre'
+      genero: 'niños'
       
     },
     {
@@ -294,7 +294,7 @@
       tipo: 'pantalones',
       tags:['pantalones', 'marvel', 'spiderman'],
       titulo: 'Pantalon de Buzo Niño Spiderman Icono Araña Gris Marvel',
-      genero: 'hombre'
+      genero: 'niños'
       
     },
     {
@@ -310,7 +310,7 @@
       tipo: 'poleras',
       tags:['poleras', 'marvel', 'spiderman'],
       titulo: 'Polera Manga Larga Niño Spiderman Multiverse Gris Marvel',
-      genero: 'nino'
+      genero: 'niños'
       
     },
     {
@@ -326,7 +326,7 @@
       tipo: 'polerones',
       tags:['polerones', 'marvel', 'spiderman'],
       titulo: 'Poleron Niño Spiderman Telarañas Gris Marvel',
-      genero: 'nino'
+      genero: 'niños'
       
     },
     {
@@ -342,7 +342,7 @@
       tipo: 'polerones',
       tags:['polerones', 'marvel', 'spiderman'],
       titulo: 'Poleron Niño Spiderman Big S Azul Marvel',
-      genero: 'hombre'
+      genero: 'niños'
       
     },
     {
@@ -358,7 +358,7 @@
       tipo: 'polerones',
       tags:['polerones', 'marvel', 'avengers'],
       titulo: 'Pantalon de Buzo Niño Avengers Team Gris Marvel',
-      genero: 'hombre'
+      genero: 'niños'
       
     }
 

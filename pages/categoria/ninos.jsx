@@ -13,7 +13,7 @@ export default function PaginaNiños() {
 
   
 
-  const { productos, isLoading, isError } = useProducts('/productos?genero=nino');
+  const { productos, isLoading, isError } = useProducts('/productos?genero=niños');
   console.log( productos )
 
   return (
