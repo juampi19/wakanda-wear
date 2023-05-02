@@ -1,12 +1,21 @@
 import { TiendaLayout } from "@/components/layouts";
 import { SelectorTalla, SlideShowProductos } from "@/components/productos";
 import { Contador } from "@/components/ui";
-import { DataInicial } from "@/database/productos";
+import { dbProducto } from "@/database";
 import { Box, Button, Chip, Grid, Typography } from "@mui/material";
+import { useRouter } from "next/router";
 
-const producto = DataInicial.productos[0];
 
-const slug = () => {
+
+const PaginaProducto = ({ producto }) => {
+
+  /**Prueba 1 - Static */
+  // const {query} = useRouter();
+  // const {productos: producto, isLoading} = useProducts(`/productos/${query.slug}`);
+
+  
+  
+
   return (
     <TiendaLayout titulo={producto.titulo} descripcionPagina={producto.descripcion}>
       <Grid container spacing={3}>
@@ -29,7 +38,7 @@ const slug = () => {
               <Contador />
               <SelectorTalla 
                 tallas={ producto.tallas }
-                tallaSeleccionada={ producto.tallas[3] }
+                // tallaSeleccionada={ producto.tallas[3] }
               />
             </Box>
 
@@ -55,5 +64,74 @@ const slug = () => {
     </TiendaLayout>
   )
 }
+/**Prueba 2 serverSideRendering */
+// export const getServerSideProps = async( {params} ) => {
+  
+//   const { slug = '' } = params;
+//   const producto = await dbProducto.obtenerProductoPorSlug( slug );
 
-export default slug
+
+//   if( !producto ) {
+//     return {
+//       redirect: {
+//         destination: '/',
+//         permanent: false
+//       }
+//     }
+//   }
+
+
+//   return {
+//     props: {
+//       producto
+//     }
+//   }
+// }
+
+
+/**Prueba 3 */
+//getStaticPaths
+export const getStaticPaths = async() => {
+
+  const productosSlug = await dbProducto.obtenerProductoSlugs();
+  
+  
+  return {
+    paths: productosSlug.map(
+      ({ slug }) => ({
+        params:{
+          slug
+        }
+      })
+    ),
+    fallback: "blocking"
+  }
+}
+
+//getStaticProps
+//Revalidar cada 24 horas
+export const getStaticProps = async({ params }) => {
+
+  const { slug = '' } = params;
+
+  const producto = await dbProducto.obtenerProductoPorSlug( slug );
+
+  if( !producto ) {
+  return {
+    redirect: {
+      destination: '/',
+      permanent: false
+    }
+  }
+}
+
+  return {
+    props: {
+      producto
+    },
+    revalidate : 60 * 60 * 24
+  }
+}
+
+
+export default PaginaProducto

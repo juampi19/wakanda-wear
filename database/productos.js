@@ -355,8 +355,8 @@
       precio: 12990,
       tallas: ['S','M','L'],
       slug: 'pantalon-de-buzo-niño-avengers-team-gris-marvel',
-      tipo: 'polerones',
-      tags:['polerones', 'marvel', 'avengers'],
+      tipo: 'pantalones',
+      tags:['pantalones', 'marvel', 'avengers'],
       titulo: 'Pantalon de Buzo Niño Avengers Team Gris Marvel',
       genero: 'niños'
       

@@ -1,7 +1,7 @@
 import { UIContext } from "@/context";
 import { AccountCircleOutlined, AdminPanelSettings, CategoryOutlined, ConfirmationNumberOutlined, EscalatorWarningOutlined, FemaleOutlined, Inventory2Outlined, LoginOutlined, MaleOutlined, SearchOutlined, VpnKeyOutlined } from "@mui/icons-material"
 import { Box, Divider, Drawer, IconButton, Input, InputAdornment, Link, List, ListItem, ListItemIcon, ListItemText, ListSubheader } from "@mui/material";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useRouter } from "next/router";
 
 
@@ -13,6 +13,15 @@ export const SideMenu = () => {
 
     const router = useRouter();
     const { isMenuOpen, mostrarSlideMenu } = useContext(UIContext);
+    const [search, setSearch] = useState('');
+
+
+    //Funcion para navegar al producto buscado
+    const onBuscarProdcuto = () => {
+        if( search.trim().length === 0 ) return ;
+
+        navegarSeccion(`/search/${ search }`);
+    }
 
 
     const navegarSeccion = (url) => {
@@ -37,12 +46,16 @@ export const SideMenu = () => {
 
                     <ListItem>
                         <Input
+                            autoFocus
+                            value={ search }
+                            onChange={ e => setSearch( e.target.value ) }
+                            onKeyPress={ (e) => e.key === 'Enter' ? onBuscarProdcuto() : null }
                             type='text'
                             placeholder="Buscar..."
                             endAdornment={
                                 <InputAdornment position="end">
                                     <IconButton
-                                        aria-label="toggle password visibility"
+                                       onClick={onBuscarProdcuto}
                                     >
                                         <SearchOutlined />
                                     </IconButton>

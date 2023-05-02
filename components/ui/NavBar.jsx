@@ -1,14 +1,28 @@
 import { UIContext } from '@/context'
-import { SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material'
-import { AppBar, Badge, Box, Button, IconButton, Link, Toolbar, Typography } from '@mui/material'
+import { ClearOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material'
+import { AppBar, Badge, Box, Button, IconButton, Input, InputAdornment, Link, Toolbar, Typography } from '@mui/material'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 
 export const NavBar = () => {
 
+  const {asPath, push} = useRouter();
+  const [search, setSearch] = useState('');
+  const [isBuscando, setIsBuscando] = useState(false);
 
-  const {asPath} = useRouter();
+
+  //Funcion para navegar al producto buscado
+  const onBuscarProdcuto = () => {
+      if( search.trim().length === 0 ) return ;
+
+      push( `/search/${ search }` );
+  }
+
+
+  
+
+
   
   const {isMenuOpen, mostrarSlideMenu} = useContext( UIContext );
 
@@ -26,12 +40,13 @@ export const NavBar = () => {
         {/*flex */}
         <Box flex={'1'}/>
 
-        <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+        <Box sx={{ display: isBuscando ? 'none' : { xs: 'none', md: 'block' } }} className="fadeIn">
           <NextLink href={'/categoria/hombres'} passHref legacyBehavior>
             <Link>
               <Button color={ asPath === '/categoria/hombres' ? 'primary' : 'white' }>
-                Wakanda Men
+                Wakanda Men 
               </Button>
+    
             </Link>
           </NextLink>
 
@@ -55,7 +70,48 @@ export const NavBar = () => {
         {/*flex */}
         <Box flex={'1'}/>
 
-        <IconButton>
+        {/**Pantallas grandes */}
+        
+        {
+          isBuscando 
+            ? (
+              <Input
+                  sx={{ display: { xs: 'none', sm: 'flex' } }}
+                  className='fadeIn'
+                  autoFocus
+                  value={ search }
+                  onChange={ e => setSearch( e.target.value ) }
+                  onKeyPress={ (e) => e.key === 'Enter' ? onBuscarProdcuto() : null }
+                  type='text'
+                  placeholder="Buscar..."
+                  endAdornment={
+                      <InputAdornment position="end">
+                          <IconButton
+                              onClick={() => setIsBuscando(false)}
+                          >
+                              <ClearOutlined />
+                          </IconButton>
+                      </InputAdornment>
+                  }
+              />
+            )
+          : (
+            <IconButton
+              onClick={ () => setIsBuscando(true) }
+              className='fadeIn'
+              sx={{ display: { xs: 'none', sm: 'flex' } }}
+            >
+              <SearchOutlined />
+            </IconButton>
+          )
+        }
+        
+
+        {/**Pantalla pequeña */}
+        <IconButton
+          sx={{ display: { xs: 'flex', sm: 'none' } }}
+          onClick={ mostrarSlideMenu }
+        >
           <SearchOutlined />
         </IconButton>
 

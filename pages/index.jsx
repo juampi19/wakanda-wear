@@ -14,7 +14,7 @@ export default function Home() {
   
 
   const { productos, isLoading, isError } = useProducts('/productos');
-  console.log( productos )
+  
 
   return (
     <TiendaLayout titulo={'Wakanda-Wear - Home'} descripcionPagina={'Encuentra los mejores productos de tus peliculas favoritas'}>
