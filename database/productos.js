@@ -340,7 +340,7 @@ export const DataInicial =  {
       tallas: ['S','M','L'],
       slug: 'poleron-niño-spiderman-azul-marvel',
       tipo: 'polerones',
-      tags:['polerones', 'marvel', 'spiderman', 'niño'],
+      tags:['polerones', 'marvel', 'spiderman', 'hombre'],
       titulo: 'Poleron Niño Spiderman Big S Azul Marvel',
       genero: 'hombre'
       
@@ -356,9 +356,9 @@ export const DataInicial =  {
       tallas: ['S','M','L'],
       slug: 'pantalon-de-buzo-niño-avengers-team-gris-marvel',
       tipo: 'polerones',
-      tags:['polerones', 'marvel', 'avengers', 'niño'],
+      tags:['polerones', 'marvel', 'avengers', 'niños'],
       titulo: 'Pantalon de Buzo Niño Avengers Team Gris Marvel',
-      genero: 'niño'
+      genero: 'niños'
       
     },
     {
@@ -373,9 +373,9 @@ export const DataInicial =  {
       tallas: ['S','M','L'],
       slug: 'spider-man-buzo-nino-jogger-algodon',
       tipo: 'pantalones',
-      tags:['pantalones', 'marvel', 'spiderman', 'buzos','niño'],
+      tags:['pantalones', 'marvel', 'spiderman', 'buzos','niños'],
       titulo: 'Spider-Man Buzo Niño Jogger Algodón',
-      genero: 'niño'
+      genero: 'niños'
       
     },
     {
@@ -389,9 +389,9 @@ export const DataInicial =  {
       tallas: ['S','M'],
       slug: 'polera-manga-larga-nino-capitan-america-w-blanco-marvel',
       tipo: 'poleras',
-      tags: ['poleras', 'marvel', 'capitan america', 'niño'],
+      tags: ['poleras', 'marvel', 'capitan america', 'niños'],
       titulo: 'Polera Manga Larga Niño Capitan America W Blanco Marvel',
-      genero: 'niño'
+      genero: 'niños'
     },
     {
       descripcion: 'Peter Parker, el hombre araña, a pesar de su corta edad este vecino amigable es portador de increíbles habilidades sobrehumanas. Desde que fue mordido por una araña, este trepa-muros tuvo que lidiar con su vida personal de estudiante y combatir el mal por las calles de New York, enfrentando enemigos del calibre de Kingpin hasta los Seis Siniestros. ¿Te gustaría ser parte de la aventura y unirte al increíble Spiderman?',
@@ -404,9 +404,9 @@ export const DataInicial =  {
       tallas: ['S','M','L'],
       slug: 'pantalon-de-buzo-spiderman-negro',
       tipo: 'pantalones',
-      tags:['pantalones', 'marvel', 'spiderman', 'buzos','niño'],
+      tags:['pantalones', 'marvel', 'spiderman', 'buzos','niños'],
       titulo: 'Pantalon De Buzo Spiderman',
-      genero: 'niño'
+      genero: 'niños'
       
     },
     {
@@ -421,9 +421,9 @@ export const DataInicial =  {
       tallas: ['S','M','L'],
       slug: 'spider-man-poleron-nino-algodon',
       tipo: 'polerones',
-      tags:['polerones', 'marvel', 'spiderman','niño'],
+      tags:['polerones', 'marvel', 'spiderman','niños'],
       titulo: 'Spider-Man Polerón Niño Algodón',
-      genero: 'niño'
+      genero: 'niños'
       
     },
     {
@@ -453,7 +453,7 @@ export const DataInicial =  {
       tallas: ['S','M','L','XL'],
       slug: 'polera-nino-hombre-holo-gris-oscuro-marvel',
       tipo: 'poleras',
-      tags: ['avengers', 'marvel', 'iron man', 'hulk', 'capitan america', 'niño'],
+      tags: ['avengers', 'marvel', 'iron man', 'hulk', 'capitan america', 'hombre'],
       titulo: 'Polera Manga Corta Marvel',
       genero: 'hombre'
     },
@@ -500,9 +500,9 @@ export const DataInicial =  {
       tallas: ['S','M','L'],
       slug: 'poleron-nino-black-panther-vintage-gris-marvel',
       tipo: 'polerones',
-      tags:['polerones', 'marvel', 'wakanda', 'black panther','niño'],
+      tags:['polerones', 'marvel', 'wakanda', 'black panther','niños'],
       titulo: 'Poleron Niño Black Panther Vintage Gris Marvel',
-      genero: 'niño'
+      genero: 'niños'
 
     },
     {
