@@ -40,11 +40,11 @@ export const NavBar = () => {
         {/*flex */}
         <Box flex={'1'}/>
 
-        <Box sx={{ display: isBuscando ? 'none' : { xs: 'none', md: 'block' } }} className="fadeIn">
+        <Box sx={{ display: isBuscando ? 'none' : { xs: 'none', sm: 'block' } }} className="fadeIn">
           <NextLink href={'/categoria/hombres'} passHref legacyBehavior>
             <Link>
               <Button color={ asPath === '/categoria/hombres' ? 'primary' : 'white' }>
-                Wakanda Men 
+                Hombres 
               </Button>
     
             </Link>
@@ -53,7 +53,7 @@ export const NavBar = () => {
           <NextLink href={'/categoria/mujeres'} passHref legacyBehavior>
             <Link>
               <Button color={ asPath === '/categoria/mujeres' ? 'primary' : 'white' }>
-                Wakanda Women
+                Mujeres
               </Button>
             </Link>
           </NextLink>
@@ -61,7 +61,7 @@ export const NavBar = () => {
           <NextLink href={'/categoria/ninos'} passHref legacyBehavior>
             <Link>
               <Button color={ asPath === '/categoria/ninos' ? 'primary' : 'white' }>
-                Wakanda Kids
+                Niños
               </Button>
             </Link>
           </NextLink>

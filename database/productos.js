@@ -63,7 +63,7 @@
         '751485-800-800.png',
         '751491-800-800.png'
       ],
-      inStock: 10,
+      inStock: 0,
       precio: 8990,
       tallas: ['XS','S','M','L'],
       slug: 'polera-hombre-iron-man-perfil-negro-marvel',
@@ -109,7 +109,7 @@
         '596158-1200-1200.png',
         '596174-1200-1200.png'
       ],
-      inStock: 12,
+      inStock: 0,
       precio: 22000,
       tallas: ['S','M','L','XL'],
       slug: 'poleron-hombre-avengers-logo-negro-marvel',
@@ -174,7 +174,7 @@
         '662736-800-800.png',
         '662744-800-800.png'
       ],
-      inStock: 5,
+      inStock: 0,
       precio: 12990,
       tallas: ['M','L','XL'],
       slug: 'polera-mujer-logo-negro-marvel',
@@ -254,7 +254,7 @@
         '751511-800-800.png',
         '751534-800-800.png'
       ],
-      inStock: 3,
+      inStock: 0,
       precio: 12990,
       tallas: ['S','M','L','XL'],
       slug: 'polera-mujer-avengers-colours-gris-marvel',

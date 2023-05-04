@@ -1,17 +1,33 @@
+import { useState } from "react";
+
+import { Box, Button, Chip, Grid, Typography } from "@mui/material";
+
 import { TiendaLayout } from "@/components/layouts";
 import { SelectorTalla, SlideShowProductos } from "@/components/productos";
 import { Contador } from "@/components/ui";
+
 import { dbProducto } from "@/database";
-import { Box, Button, Chip, Grid, Typography } from "@mui/material";
-import { useRouter } from "next/router";
+
 
 
 
 const PaginaProducto = ({ producto }) => {
 
-  /**Prueba 1 - Static */
-  // const {query} = useRouter();
-  // const {productos: producto, isLoading} = useProducts(`/productos/${query.slug}`);
+  const [productoCarrito, setProductoCarrito] = useState({
+    _id: producto._id,
+    imagen: producto.imagenes[0],
+    precio: producto.precio,
+    talla: undefined,
+    slug: producto.slug,
+    titulo: producto.titulo,
+    genero: producto.genero,
+    cantidad: 1,
+  });
+
+
+  const onTallaSeleccionada = ( talla ) => {
+    console.log( 'En padre', talla  );
+  }
 
   
   
@@ -38,16 +54,32 @@ const PaginaProducto = ({ producto }) => {
               <Contador />
               <SelectorTalla 
                 tallas={ producto.tallas }
-                // tallaSeleccionada={ producto.tallas[3] }
+                tallaSeleccionada={ productoCarrito.talla }
+                onTallaSeleccionada={onTallaSeleccionada}
               />
             </Box>
 
             {/*Agregar al carrito */}
-            <Button color="secondary" className="circular-btn" >
-              Agregar al carrito
-            </Button>
+            {
+              (producto.inStock > 0)
+              ? (
+                <Button color="secondary" className="circular-btn" >
+                  {
+                    productoCarrito.talla
+                    ? 'Agregar al carrito'
+                    : 'Seleccione una Tall'
+                  }
+                </Button>
+              ):(
+                <Chip label="No hay disponibles" color="error" variant="outlined"/>
+              )
+            }
 
-            {/* <Chip label="No hay disponibles" color="error" variant="outlined"/> */}
+
+
+            
+
+            
 
             {/*descripcion */}
             <Box sx={{mt:3}}>

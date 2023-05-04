@@ -34,7 +34,7 @@ export const lightTheme = createTheme({
       },
       styleOverrides: {
         root: {
-          backgroundColor: 'gray',
+          backgroundColor: 'white',
           height: 60,
           boxShadow: '0px 5px 5px rgba(0,0,0,0.29)'
         },

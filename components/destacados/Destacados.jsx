@@ -5,7 +5,9 @@ import styles from './SlideShowProducto.module.css';
 
 export const Destacados = ({ imagenes }) => {
     return (
-        <Slide>
+        <Slide
+
+        >
 
 
 

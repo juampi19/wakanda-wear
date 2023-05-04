@@ -1,7 +1,7 @@
 import { Box, Button } from "@mui/material"
 
 
-export const SelectorTalla = ( {tallas, tallaSeleccionada} ) => {
+export const SelectorTalla = ( {tallas, tallaSeleccionada, onTallaSeleccionada} ) => {
   return (
     <Box>
        {

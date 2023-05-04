@@ -79,7 +79,7 @@ export const SideMenu = () => {
                     </ListItem>
 
 
-                    <ListItem button sx={{ display: { xs: '', md: 'none' } }}
+                    <ListItem button sx={{ display: { xs: '', sm: 'none' } }}
                         onClick={ () => navegarSeccion('/categoria/hombres') }
                     >
                         <ListItemIcon>
@@ -90,7 +90,7 @@ export const SideMenu = () => {
 
 
 
-                    <ListItem button sx={{ display: { xs: '', md: 'none' } }}
+                    <ListItem button sx={{ display: { xs: '', sm: 'none' } }}
                         onClick={ () => navegarSeccion( '/categoria/mujeres' ) }
                     >
                         <ListItemIcon>
@@ -102,7 +102,7 @@ export const SideMenu = () => {
 
 
 
-                    <ListItem button sx={{ display: { xs: '', md: 'none' } }}
+                    <ListItem button sx={{ display: { xs: '', sm: 'none' } }}
                         onClick={ () => navegarSeccion( '/categoria/ninos' ) }
                     >
                         <ListItemIcon>
