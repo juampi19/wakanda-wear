@@ -396,8 +396,8 @@ export const DataInicial =  {
     {
       descripcion: 'Peter Parker, el hombre araña, a pesar de su corta edad este vecino amigable es portador de increíbles habilidades sobrehumanas. Desde que fue mordido por una araña, este trepa-muros tuvo que lidiar con su vida personal de estudiante y combatir el mal por las calles de New York, enfrentando enemigos del calibre de Kingpin hasta los Seis Siniestros. ¿Te gustaría ser parte de la aventura y unirte al increíble Spiderman?',
       imagenes: [
-        '71ae96b8-aa6f-4de7-b375-d73a6f4c0968.png',
-        'e6f4642d-27fd-48b5-97c6-c7c9e2628ecf.png'
+        '10.png',
+        '11.png'
       ],
       inStock: 10,
       precio: 15990,
@@ -429,8 +429,8 @@ export const DataInicial =  {
     {
       descripcion: 'Peter Parker, el hombre araña, a pesar de su corta edad este vecino amigable es portador de increíbles habilidades sobrehumanas. Desde que fue mordido por una araña, este trepa-muros tuvo que lidiar con su vida personal de estudiante y combatir el mal por las calles de New York, enfrentando enemigos del calibre de Kingpin hasta los Seis Siniestros. ¿Te gustaría ser parte de la aventura y unirte al increíble Spiderman?',
       imagenes: [
-        'c352e554-4083-47cd-9c0b-efbddd48fefe.png',
-        '254baf77-eafd-4920-9079-1b46d2b6e3ff.png'
+        'fdfb0b46-700b-4a1b-a957-7b8c6d845f54.png',
+        '411f6e2f-2cf4-4d70-91ce-f96699b3cb95.png'
       ],
       inStock: 11,
       precio: 16990,
@@ -460,8 +460,8 @@ export const DataInicial =  {
     {
       descripcion: 'Los Héroes más poderosos del planeta, un equipo compuesto de personajes extraordinarios; Iron Man, Capitán América, Thor, Hulk, Black Widow, Ant-man, The Wasp. Son tan poderosos que han derrotado a Loki, Ultrón, incluso al mismo Thanos, juntos nada los podrá vencer ¡Vengadores unidos!.¡Bienvenidos sean al Universo de Marvel y al extraordinario mundo del Cómic!',
       imagenes: [
-        '96ebe39d-b3bf-4e9a-91e1-9e0b63991857.png',
-        'bc015960-fe4b-41e2-aad7-bf26435f37e6.png'
+        '0f7cf877-edd7-4aef-8b55-ee8fb297bf61.png',
+        '210980d3-ca11-43fb-b082-3e05c2ce9f04.png'
       ],
       inStock: 12,
       precio: 22000,
