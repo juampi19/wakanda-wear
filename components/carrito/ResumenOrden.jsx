@@ -1,6 +1,18 @@
+import { CarritoContext } from "@/context"
 import { Grid, Typography } from "@mui/material"
+import { useContext } from "react"
 
 export const ResumenOrden = () => {
+
+  const { numeroProductos, subtotal, impuesto, total } = useContext( CarritoContext );
+
+  const formatPrice = new Intl.NumberFormat('es-CL', {
+    style: 'currency',
+    currency: 'CLP',
+    maximumFractionDigits: 0,
+    minimumFractionDigits: 0
+  });
+
   return (
     <Grid container>
       <Grid item xs={6}>
@@ -8,7 +20,7 @@ export const ResumenOrden = () => {
       </Grid>
 
       <Grid item xs={6} display={'flex'} justifyContent={'end'}>
-        <Typography>3 productos</Typography>
+        <Typography>{ numeroProductos } { numeroProductos > 1 ? 'productos' : 'producto' }</Typography>
       </Grid>
 
       <Grid item xs={6}>
@@ -16,15 +28,15 @@ export const ResumenOrden = () => {
       </Grid>
 
       <Grid item xs={6} display={'flex'} justifyContent={'end'}>
-        <Typography>{ `$${30000}` }</Typography>
+        <Typography>{ formatPrice.format( subtotal ) }</Typography>
       </Grid>
 
       <Grid item xs={6}>
-        <Typography>Impuestos (15%)</Typography>
+        <Typography>Impuestos ({ Number( process.env.NEXT_PUBLIC_IMPUESTO ) * 100 }%)</Typography>
       </Grid>
 
       <Grid item xs={6} display={'flex'} justifyContent={'end'}>
-        <Typography>{`$${3500}`}</Typography>
+        <Typography>{ formatPrice.format( impuesto ) }</Typography>
       </Grid>
 
       <Grid item xs={6} sx={{ mt: 2 }}>
@@ -32,7 +44,7 @@ export const ResumenOrden = () => {
       </Grid>
 
       <Grid item xs={6} display={'flex'} justifyContent={'end'} sx={{ mt: 2 }}>
-        <Typography variant="subtitle1">{`$${35000}`}</Typography>
+        <Typography variant="subtitle1">{ formatPrice.format( total ) }</Typography>
       </Grid>
 
     </Grid>

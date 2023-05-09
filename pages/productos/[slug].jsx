@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import { Box, Button, Chip, Grid, Typography } from "@mui/material";
 
@@ -7,11 +7,17 @@ import { SelectorTalla, SlideShowProductos } from "@/components/productos";
 import { Contador } from "@/components/ui";
 
 import { dbProducto } from "@/database";
+import { CarritoContext } from "@/context";
+import { useRouter } from "next/router";
 
 
 
 
 const PaginaProducto = ({ producto }) => {
+
+  const router = useRouter();
+
+  const { carrito, agregarProductoCarrtio } = useContext( CarritoContext );
 
   const [productoCarrito, setProductoCarrito] = useState({
     _id: producto._id,
@@ -26,7 +32,30 @@ const PaginaProducto = ({ producto }) => {
 
 
   const onTallaSeleccionada = ( talla ) => {
-    console.log( 'En padre', talla  );
+    setProductoCarrito( productoActual => ({
+      ...productoActual,
+      talla
+    }) );
+  }
+
+
+  const actualizarCantidad = ( cantidad ) => {
+    
+      setProductoCarrito( productoActual => ({
+        ...productoActual,
+        cantidad,
+      }) );
+    
+    
+  }
+
+
+  const onAgregarProducto = () => {
+    if( !productoCarrito.talla ) {return}
+
+    agregarProductoCarrtio( productoCarrito );
+    router.push('/carrito');
+
   }
 
   
@@ -51,7 +80,12 @@ const PaginaProducto = ({ producto }) => {
             <Box sx={{ my: 2 }}>
               <Typography variant="subtitle2">Cantidad</Typography>
               {/*componente para contador */}
-              <Contador />
+              <Contador 
+                cantidadActual={productoCarrito.cantidad}
+                actualizarCantidad={actualizarCantidad}
+                valorMaximo={ producto.inStock > 10 ? 10 : producto.inStock }
+              />
+
               <SelectorTalla 
                 tallas={ producto.tallas }
                 tallaSeleccionada={ productoCarrito.talla }
@@ -63,11 +97,15 @@ const PaginaProducto = ({ producto }) => {
             {
               (producto.inStock > 0)
               ? (
-                <Button color="secondary" className="circular-btn" >
+                <Button 
+                  color="secondary" 
+                  className="circular-btn" 
+                  onClick={onAgregarProducto}
+                  >
                   {
                     productoCarrito.talla
                     ? 'Agregar al carrito'
-                    : 'Seleccione una Tall'
+                    : 'Seleccione una Talla'
                   }
                 </Button>
               ):(
@@ -76,10 +114,6 @@ const PaginaProducto = ({ producto }) => {
             }
 
 
-
-            
-
-            
 
             {/*descripcion */}
             <Box sx={{mt:3}}>

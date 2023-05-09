@@ -32,7 +32,7 @@ const ProductoEsquema = new Schema({
     type: String, 
     required: true,
     enum: {
-      values: ['poleras', 'pantalones', 'polerones'],
+      values: ['poleras', 'pantalones', 'polerones', 'gorros', 'pantuflas', 'pijamas' ],
       message: '{VALUE} no es un tipo permitido'
     }
   },

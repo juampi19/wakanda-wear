@@ -1,3 +1,5 @@
+import bcryptjs from 'bcryptjs';
+
 /**
  productos - tipos
  descripcion: string
@@ -11,20 +13,39 @@
  tipo: string
  genero: string
  */
+
+
 /**
- descripcion: '',
- imagenes: [''],
- inStock: ,
- precio: ,
- tallas: ['']
- slug: '',
- tags:'',
- titulo: '',
- tipo: '',
- genero: ''
+ * Usuarios
+ * nombre: string,
+ * email: string,
+ * password: string,
+ * rol: 'admin' | 'cliente' | 'repartidor'
  */
 
+
+
+
+
  export const DataInicial =  {
+  usuarios: [
+    {
+      nombre: 'juan',
+      email: 'juan@gmail.com',
+      password: bcryptjs.hashSync('juan123'),
+      rol: 'admin'
+    },{
+      nombre: 'freddy',
+      email: 'freddy@gmail.com',
+      password: bcryptjs.hashSync('freddy123'),
+      rol: 'cliente'
+    },{
+      nombre: 'joaquin',
+      email: 'joaquin@gmail.com',
+      password: bcryptjs.hashSync('joaquin123'),
+      rol: 'cliente'
+    }
+  ],
   productos: [
     {
       descripcion: 'Los Héroes más poderosos del planeta, un equipo compuesto de personajes extraordinarios; Iron Man, Spiderman, doctor strange, Hulk, Venom. Son tan poderosos que han derrotado a Loki, Ultrón, incluso al mismo Thanos, juntos nada los podrá vencer ¡Vengadores unidos!.¡Bienvenidos sean al Universo de Marvel y al extraordinario mundo del Cómic!',

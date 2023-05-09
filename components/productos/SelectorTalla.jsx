@@ -11,6 +11,7 @@ export const SelectorTalla = ( {tallas, tallaSeleccionada, onTallaSeleccionada} 
             size="small"
             sx={{ marginTop: '5px' }}
             color={ tallaSeleccionada === talla ? 'primary' : 'white' }
+            onClick={ () => onTallaSeleccionada( talla ) }
           >
             { talla }
           </Button>

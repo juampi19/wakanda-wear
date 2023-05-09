@@ -1,4 +1,4 @@
-import { UIContext } from '@/context'
+import { CarritoContext, UIContext } from '@/context'
 import { ClearOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material'
 import { AppBar, Badge, Box, Button, IconButton, Input, InputAdornment, Link, Toolbar, Typography } from '@mui/material'
 import NextLink from 'next/link'
@@ -19,12 +19,9 @@ export const NavBar = () => {
       push( `/search/${ search }` );
   }
 
-
-  
-
-
   
   const {isMenuOpen, mostrarSlideMenu} = useContext( UIContext );
+  const {numeroProductos, carrito} = useContext( CarritoContext )
 
 
   return (
@@ -115,10 +112,10 @@ export const NavBar = () => {
           <SearchOutlined />
         </IconButton>
 
-        <NextLink href={'/carrito'} passHref legacyBehavior>
+        <NextLink href={ carrito.length ? '/carrito' : '/carrito/vacia'} passHref legacyBehavior>
             <Link>
               <IconButton>
-                <Badge badgeContent={2} color='secondary'>
+                <Badge badgeContent={ numeroProductos > 9 ? '+9' : numeroProductos } color='secondary'>
                   <ShoppingCartOutlined />
                 </Badge>
               </IconButton>

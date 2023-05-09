@@ -1,11 +1,16 @@
 import { ListaCarrito, ResumenOrden } from "@/components/carrito"
 import { TiendaLayout } from "@/components/layouts"
+import { CarritoContext } from "@/context"
 import { Box, Button, Card, CardContent, Divider, Grid, Typography } from "@mui/material"
+import { useContext } from "react"
 
 
 const PaginaCarrito = () => {
+
+  const { numeroProductos } = useContext( CarritoContext );
+
   return (
-    <TiendaLayout titulo={'Carrito - 3'} descripcionPagina={'Carrito de compras de la tienda'}>
+    <TiendaLayout titulo={`Carrito - ${numeroProductos}`} descripcionPagina={'Carrito de compras de la tienda'}>
       <Typography variant="h1" component={'h1'} sx={{ mb: 2 }}>Carrito
       </Typography>
 

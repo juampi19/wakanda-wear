@@ -1,7 +1,12 @@
 import Head from 'next/head'
 import { NavBar, SideMenu } from '../ui'
+import { Destacados } from '../destacados/Destacados'
+import { banners } from '@/database/destacados';
 
-export const TiendaLayout = ({ children, titulo, descripcionPagina, fullUrlImagen  }) => {
+
+const imagenes = banners.imagenes;
+
+export const TiendaLayout = ({ children, titulo, descripcionPagina, fullUrlImagen, banner  }) => {
   return (
     <>
       <Head>
@@ -25,6 +30,11 @@ export const TiendaLayout = ({ children, titulo, descripcionPagina, fullUrlImage
 
       {/*TODO: sidebar */}
       <SideMenu />
+
+      {/*banners */}
+      { banner && <Destacados
+        imagenes={imagenes}
+      /> }
 
       <main style={{
         margin: '80px auto',

@@ -1,5 +1,6 @@
 import { DataSemilla, db } from "@/database";
-import { Producto } from "@/models";
+import { Producto, Usuario } from "@/models";
+
 
 export default async function handler (req, res) {
 
@@ -8,6 +9,10 @@ export default async function handler (req, res) {
   }
 
   await db.connect();
+
+  await Usuario.deleteMany();
+  await Usuario.insertMany( DataSemilla.DataInicial.usuarios );
+
   await Producto.deleteMany();
   await Producto.insertMany( DataSemilla.DataInicial.productos );
 
