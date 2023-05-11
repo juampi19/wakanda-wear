@@ -169,7 +169,7 @@ import bcryptjs from 'bcryptjs';
       slug: 'polera-hombre-Grogu-StarWars-gris',
       tipo: 'poleras',
       tags: ['poleras', 'starwar', 'mandalorian'],
-      titulo: 'Polera Hombre Grogu Star Wars Gris Marvel',
+      titulo: 'Polera Hombre Grogu Star Wars Gris ',
       genero: 'hombre'
     },
     {
@@ -571,6 +571,67 @@ import bcryptjs from 'bcryptjs';
       titulo: 'Polera OB Hombre Negro Algodón XXL Black Panther',
       genero: 'hombre'
     },
+    {
+      descripcion: 'Desde una galaxia muy muy lejana… donde converge la lucha de la resistencia contra el Imperio Galáctico, el lado oscuro y el luminoso, los Jedi y los Sith. George Lucas nos trae esta saga de películas conocida como La Guerra de las galaxias, con sus tres trilogías. Una Nueva Esperanza, El retorno del Jedi y El Imperio Contraataca son las que dieron el inicio de esta franquicia de ciencia ficción, contando el viaje Luke Skywalker de la mano de sus maestros Obi-Wan Kenobi y Yoda, en contra al malvado emperador Palpatine y Darth Vader',
+      imagenes: [
+        'pantuflasstarwars-removebg-preview.png',
+        'pantuflasstarwars2-removebg-preview.png'
+      ],
+      inStock: 4,
+      precio: 11190,
+      tallas: ['M','L','XL'],
+      slug: 'pantufla-3d-hombre-darth-vader-head-negro-star-wars',
+      tipo: 'pantuflas',
+      tags: ['Jedi', 'Star wars', 'sable laser', 'darth vader', 'Sith', 'galaxia'],
+      titulo: 'Pantufla 3D Hombre Darth Vader Head Negro Star Wars',
+      genero: 'hombre'
+    },
+    {
+      descripcion: 'Desde una galaxia muy muy lejana… donde converge la lucha de la resistencia contra el Imperio Galáctico, el lado oscuro y el luminoso, los Jedi y los Sith. George Lucas nos trae esta saga de películas conocida como La Guerra de las galaxias, con sus tres trilogías. Una Nueva Esperanza, El retorno del Jedi y El Imperio Contraataca son las que dieron el inicio de esta franquicia de ciencia ficción, contando el viaje Luke Skywalker de la mano de sus maestros Obi-Wan Kenobi y Yoda, en contra al malvado emperador Palpatine y Darth Vader',
+      imagenes: [
+        'pantuflagrogu-removebg-preview.png',
+        'pantuflagrogu3-removebg-preview.png',
+        
+      ],
+      inStock: 10,
+      precio: 8990,
+      tallas: ['XS','S'],
+      slug: 'pantufla-3d-niño-grogu-cute-cafe-star-war',
+      tipo: 'pantuflas',
+      tags: ['Jedi', 'Star wars', 'sable laser', 'darth vader', 'Sith', 'galaxia','grogu'],
+      titulo: 'Pantufla 3D Niño Grogu Cute Cafe Star Wars',
+      genero: 'niños'
+    },
+    {
+      descripcion: 'Los Héroes más poderosos del planeta, un equipo compuesto de personajes extraordinarios; Iron Man, Spiderman, doctor strange, Hulk, Venom. Son tan poderosos que han derrotado a Loki, Ultrón, incluso al mismo Thanos, juntos nada los podrá vencer ¡Vengadores unidos!.¡Bienvenidos sean al Universo de Marvel y al extraordinario mundo del Cómic!',
+      imagenes: [
+        'pantuflaspiderman-PhotoRoom.png-PhotoRoom.png',
+        'pantuflaspiderman3-PhotoRoom.png-PhotoRoom.png'
+      ],
+      inStock: 7,
+      precio: 14990,
+      tallas: ['XS','S'],
+      slug: 'pantufla-bota-niño-spiderman-vision-rojo-marvel',
+      tipo: 'pantuflas',
+      tags: ['avengers', 'marvel', 'iron man', 'hulk', 'capitan america', 'niño','spider-man'],
+      titulo: 'Pantufla Bota Niño Spiderman Vision Rojo Marvel',
+      genero: 'niños'
+    },
+    {
+      descripcion: 'Los Héroes más poderosos del planeta, un equipo compuesto de personajes extraordinarios; Iron Man, Spiderman, doctor strange, Hulk, Venom. Son tan poderosos que han derrotado a Loki, Ultrón, incluso al mismo Thanos, juntos nada los podrá vencer ¡Vengadores unidos!.¡Bienvenidos sean al Universo de Marvel y al extraordinario mundo del Cómic!',
+      imagenes: [
+        'pijamarojo-PhotoRoom.png-PhotoRoom.png',
+        'pijamarojo2-PhotoRoom.png-PhotoRoom.png'
+      ],
+      inStock: 3,
+      precio: 14990,
+      tallas: ['XS','S'],
+      slug: 'pijama-niño-avengers-heroes-rojo-marvel',
+      tipo: 'pijamas',
+      tags: ['avengers', 'marvel', 'iron man', 'hulk', 'capitan america', 'niño','spider-man'],
+      titulo: 'Pijama Niño Avengers Heroes Rojo Marvel',
+      genero: 'niños'
+    }
   ]
   
 }
