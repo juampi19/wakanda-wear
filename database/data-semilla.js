@@ -84,7 +84,7 @@ import bcryptjs from 'bcryptjs';
         '751485-800-800.png',
         '751491-800-800.png'
       ],
-      inStock: 0,
+      inStock: 10,
       precio: 8990,
       tallas: ['XS','S','M','L'],
       slug: 'polera-hombre-iron-man-perfil-negro-marvel',
@@ -130,7 +130,7 @@ import bcryptjs from 'bcryptjs';
         '596158-1200-1200.png',
         '596174-1200-1200.png'
       ],
-      inStock: 0,
+      inStock: 12,
       precio: 22000,
       tallas: ['S','M','L','XL'],
       slug: 'poleron-hombre-avengers-logo-negro-marvel',
@@ -195,7 +195,7 @@ import bcryptjs from 'bcryptjs';
         '662736-800-800.png',
         '662744-800-800.png'
       ],
-      inStock: 0,
+      inStock: 5,
       precio: 12990,
       tallas: ['M','L','XL'],
       slug: 'polera-mujer-logo-negro-marvel',
@@ -275,12 +275,12 @@ import bcryptjs from 'bcryptjs';
         '751511-800-800.png',
         '751534-800-800.png'
       ],
-      inStock: 0,
+      inStock: 3,
       precio: 12990,
       tallas: ['S','M','L','XL'],
       slug: 'polera-mujer-avengers-colours-gris-marvel',
       tipo: 'poleras',
-      tags:['poleras', 'marvel', 'avengers'],
+      tags:['poleras', 'marvel', 'avengers', 'mujer'],
       titulo: 'Polera Mujer Avengers Colours Gris Marvel',
       genero: 'mujer'
       
@@ -297,9 +297,9 @@ import bcryptjs from 'bcryptjs';
       tallas: ['S','M','L'],
       slug: 'pantalon-de-buzo-niño-spiderman-cool-multicolor-marvel',
       tipo: 'pantalones',
-      tags:['pantalones', 'marvel', 'spiderman'],
+      tags:['pantalones', 'marvel', 'spiderman', 'hombre'],
       titulo: 'Pantalon de Buzo Niño Spiderman Cool Multicolor Marvel',
-      genero: 'niños'
+      genero: 'hombre'
       
     },
     {
@@ -313,9 +313,9 @@ import bcryptjs from 'bcryptjs';
       tallas: ['S','M','L'],
       slug: 'pantalon-de-buzo-niño-spiderman-icono-araña-gris-marvel',
       tipo: 'pantalones',
-      tags:['pantalones', 'marvel', 'spiderman'],
+      tags:['pantalones', 'marvel', 'spiderman', 'hombre'],
       titulo: 'Pantalon de Buzo Niño Spiderman Icono Araña Gris Marvel',
-      genero: 'niños'
+      genero: 'hombre'
       
     },
     {
@@ -329,9 +329,9 @@ import bcryptjs from 'bcryptjs';
       tallas: ['S','M','L'],
       slug: 'polera-manga-larga-niño-spiderman-multiverse-gris-marvel',
       tipo: 'poleras',
-      tags:['poleras', 'marvel', 'spiderman'],
+      tags:['poleras', 'marvel', 'spiderman', 'hombre'],
       titulo: 'Polera Manga Larga Niño Spiderman Multiverse Gris Marvel',
-      genero: 'niños'
+      genero: 'hombre'
       
     },
     {
@@ -345,9 +345,9 @@ import bcryptjs from 'bcryptjs';
       tallas: ['S','M','L'],
       slug: 'poleron-niño-spiderman-telarañas-gris-marvel',
       tipo: 'polerones',
-      tags:['polerones', 'marvel', 'spiderman'],
+      tags:['polerones', 'marvel', 'spiderman', 'hombre'],
       titulo: 'Poleron Niño Spiderman Telarañas Gris Marvel',
-      genero: 'niños'
+      genero: 'hombre'
       
     },
     {
@@ -361,9 +361,9 @@ import bcryptjs from 'bcryptjs';
       tallas: ['S','M','L'],
       slug: 'poleron-niño-spiderman-azul-marvel',
       tipo: 'polerones',
-      tags:['polerones', 'marvel', 'spiderman'],
+      tags:['polerones', 'marvel', 'spiderman', 'hombre'],
       titulo: 'Poleron Niño Spiderman Big S Azul Marvel',
-      genero: 'niños'
+      genero: 'hombre'
       
     },
     {
@@ -376,16 +376,201 @@ import bcryptjs from 'bcryptjs';
       precio: 12990,
       tallas: ['S','M','L'],
       slug: 'pantalon-de-buzo-niño-avengers-team-gris-marvel',
-      tipo: 'pantalones',
-      tags:['pantalones', 'marvel', 'avengers'],
+      tipo: 'polerones',
+      tags:['polerones', 'marvel', 'avengers', 'niños'],
       titulo: 'Pantalon de Buzo Niño Avengers Team Gris Marvel',
       genero: 'niños'
       
-    }
+    },
+    {
+      descripcion: 'Peter Parker, el hombre araña, a pesar de su corta edad este vecino amigable es portador de increíbles habilidades sobrehumanas. Desde que fue mordido por una araña, este trepa-muros tuvo que lidiar con su vida personal de estudiante y combatir el mal por las calles de New York, enfrentando enemigos del calibre de Kingpin hasta los Seis Siniestros. ¿Te gustaría ser parte de la aventura y unirte al increíble Spiderman?',
+      imagenes: [
+        'Imagen2.png',
+        'Imagen1.png',
+        'Imagen3.png'
+      ],
+      inStock: 10,
+      precio: 9990,
+      tallas: ['S','M','L'],
+      slug: 'spider-man-buzo-nino-jogger-algodon',
+      tipo: 'pantalones',
+      tags:['pantalones', 'marvel', 'spiderman', 'buzos','niños'],
+      titulo: 'Spider-Man Buzo Niño Jogger Algodón',
+      genero: 'niños'
+      
+    },
+    {
+      descripcion: 'Por más de 60 años esta editorial nos ha entregado historias increíbles y personajes emblemáticos, de la mano y mente de los notables Stan Lee, Jack Kirby y Steve Ditko. Casa de Spiderman, Hulk, Iron Man, X-men, Cuatro fantásticos, los vengadores y muchos otros. Ahora siendo parte de Disney nos siguen sorprendiendo y emocionando con las aventuras que tanto disfrutamos.¡Bienvenidos sean al Universo de Marvel y al extraordinario mundo del Cómic!',
+      imagenes: [
+        'ba39f4a3-f0c7-4092-82c3-05c6c089cda9.png',
+        'f81b3120-7960-46d2-8256-bf00492e626f.png'
+      ],
+      inStock: 12,
+      precio: 12990,
+      tallas: ['S','M'],
+      slug: 'polera-manga-larga-nino-capitan-america-w-blanco-marvel',
+      tipo: 'poleras',
+      tags: ['poleras', 'marvel', 'capitan america', 'niños'],
+      titulo: 'Polera Manga Larga Niño Capitan America W Blanco Marvel',
+      genero: 'niños'
+    },
+    {
+      descripcion: 'Peter Parker, el hombre araña, a pesar de su corta edad este vecino amigable es portador de increíbles habilidades sobrehumanas. Desde que fue mordido por una araña, este trepa-muros tuvo que lidiar con su vida personal de estudiante y combatir el mal por las calles de New York, enfrentando enemigos del calibre de Kingpin hasta los Seis Siniestros. ¿Te gustaría ser parte de la aventura y unirte al increíble Spiderman?',
+      imagenes: [
+        '10.png',
+        '11.png'
+      ],
+      inStock: 10,
+      precio: 15990,
+      tallas: ['S','M','L'],
+      slug: 'pantalon-de-buzo-spiderman-negro',
+      tipo: 'pantalones',
+      tags:['pantalones', 'marvel', 'spiderman', 'buzos','niños'],
+      titulo: 'Pantalon De Buzo Spiderman',
+      genero: 'niños'
+      
+    },
+    {
+      descripcion: 'Peter Parker, el hombre araña, a pesar de su corta edad este vecino amigable es portador de increíbles habilidades sobrehumanas. Desde que fue mordido por una araña, este trepa-muros tuvo que lidiar con su vida personal de estudiante y combatir el mal por las calles de New York, enfrentando enemigos del calibre de Kingpin hasta los Seis Siniestros. ¿Te gustaría ser parte de la aventura y unirte al increíble Spiderman?',
+      imagenes: [
+        'd9d0cdc2-a367-49fe-9155-9baac4d6286d.png',
+        '382bb205-3acc-46e5-bb3a-8e6bfababba6.png',
+        '224bb49d-b121-41b5-8687-bbf9fbe3c0e4.png'
+      ],
+      inStock: 11,
+      precio: 16990,
+      tallas: ['S','M','L'],
+      slug: 'spider-man-poleron-nino-algodon',
+      tipo: 'polerones',
+      tags:['polerones', 'marvel', 'spiderman','niños'],
+      titulo: 'Spider-Man Polerón Niño Algodón',
+      genero: 'niños'
+      
+    },
+    {
+      descripcion: 'Peter Parker, el hombre araña, a pesar de su corta edad este vecino amigable es portador de increíbles habilidades sobrehumanas. Desde que fue mordido por una araña, este trepa-muros tuvo que lidiar con su vida personal de estudiante y combatir el mal por las calles de New York, enfrentando enemigos del calibre de Kingpin hasta los Seis Siniestros. ¿Te gustaría ser parte de la aventura y unirte al increíble Spiderman?',
+      imagenes: [
+        'fdfb0b46-700b-4a1b-a957-7b8c6d845f54.png',
+        '411f6e2f-2cf4-4d70-91ce-f96699b3cb95.png'
+      ],
+      inStock: 11,
+      precio: 16990,
+      tallas: ['S','M','L'],
+      slug: 'poleron-spiderman-color-gris',
+      tipo: 'polerones',
+      tags:['polerones', 'marvel', 'spiderman','hombre'],
+      titulo: 'Polerón Spiderman Gris',
+      genero: 'hombre'
+      
+    },
+    {
+      descripcion: 'Los Héroes más poderosos del planeta, un equipo compuesto de personajes extraordinarios; Iron Man, Spiderman, doctor strange, Hulk, Venom. Son tan poderosos que han derrotado a Loki, Ultrón, incluso al mismo Thanos, juntos nada los podrá vencer ¡Vengadores unidos!.¡Bienvenidos sean al Universo de Marvel y al extraordinario mundo del Cómic!',
+      imagenes: [
+        'bf1e1d06-e886-40be-9213-53539c777659.png',
+        '85d3cecb-3615-437c-ae62-cc32a15c961e.png'
+      ],
+      inStock: 7,
+      precio: 11190,
+      tallas: ['S','M','L','XL'],
+      slug: 'polera-nino-hombre-holo-gris-oscuro-marvel',
+      tipo: 'poleras',
+      tags: ['avengers', 'marvel', 'iron man', 'hulk', 'capitan america', 'hombre'],
+      titulo: 'Polera Manga Corta Marvel',
+      genero: 'hombre'
+    },
+    {
+      descripcion: 'Los Héroes más poderosos del planeta, un equipo compuesto de personajes extraordinarios; Iron Man, Capitán América, Thor, Hulk, Black Widow, Ant-man, The Wasp. Son tan poderosos que han derrotado a Loki, Ultrón, incluso al mismo Thanos, juntos nada los podrá vencer ¡Vengadores unidos!.¡Bienvenidos sean al Universo de Marvel y al extraordinario mundo del Cómic!',
+      imagenes: [
+        '0f7cf877-edd7-4aef-8b55-ee8fb297bf61.png',
+        '210980d3-ca11-43fb-b082-3e05c2ce9f04.png'
+      ],
+      inStock: 12,
+      precio: 22000,
+      tallas: ['S','M','L','XL'],
+      slug: 'poleron-avengers-negro-thor-ionman-hulk-capitanamerica',
+      tipo: 'polerones',
+      tags: ['polerones', 'marvel', 'avengers','hombre'],
+      titulo: 'Polerón Avengers',
+      genero: 'hombre'
+    },
+    {
+      descripcion: 'Por más de 60 años esta editorial nos ha entregado historias increíbles y personajes emblemáticos, de la mano y mente de los notables Stan Lee, Jack Kirby y Steve Ditko. Casa de Spiderman, Hulk, Iron Man, X-men, Cuatro fantásticos, los vengadores y muchos otros. Ahora siendo parte de Disney nos siguen sorprendiendo y emocionando con las aventuras que tanto disfrutamos.',
+      imagenes: [
+        '23892d07-44c7-4079-8597-a2c8b96c69ef.png',
+        '5b9882d8-86d3-4de2-9f73-4cbc8f3a4e1d.png',
+        'bab70b13-1256-4354-bcab-1dd1819cfcb2.png'
+      ],
+      inStock: 7,
+      precio: 12990,
+      tallas: ['S','M','L','XL'],
+      slug: 'polera-hombre-black-panther-huella-negro-marvel',
+      tipo: 'poleras',
+      tags:['poleras', 'marvel', 'wakanda', 'black panther','hombre'],
+      titulo: 'Polera Niño Black Panther Huella Negro Marvel',
+      genero: 'hombre'
 
+    },
+    {
+      descripcion: 'Por más de 60 años esta editorial nos ha entregado historias increíbles y personajes emblemáticos, de la mano y mente de los notables Stan Lee, Jack Kirby y Steve Ditko. Casa de Spiderman, Hulk, Iron Man, X-men, Cuatro fantásticos, los vengadores y muchos otros. Ahora siendo parte de Disney nos siguen sorprendiendo y emocionando con las aventuras que tanto disfrutamos.',
+      imagenes: [
+        '4a6c83db-fffc-41eb-b4f7-7ab7591c2cf0.png',
+        '869312c3-f776-4646-a47f-ee3835e4fd3e.png'
+      ],
+      inStock: 7,
+      precio: 19990,
+      tallas: ['S','M','L'],
+      slug: 'poleron-nino-black-panther-vintage-gris-marvel',
+      tipo: 'polerones',
+      tags:['polerones', 'marvel', 'wakanda', 'black panther','niños'],
+      titulo: 'Poleron Niño Black Panther Vintage Gris Marvel',
+      genero: 'niños'
 
-    
+    },
+    {
+      descripcion: 'Por más de 60 años esta editorial nos ha entregado historias increíbles y personajes emblemáticos, de la mano y mente de los notables Stan Lee, Jack Kirby y Steve Ditko. Casa de Spiderman, Hulk, Iron Man, X-men, Cuatro fantásticos, los vengadores y muchos otros. Ahora siendo parte de Disney nos siguen sorprendiendo y emocionando con las aventuras que tanto disfrutamos.',
+      imagenes: [
+        '7599b21a-af47-4820-9a28-823506d7e23b.png'
+      ],
+      inStock: 7,
+      precio: 12990,
+      tallas: ['L'],
+      slug: 'funko-boxed-tee-marvel-black-panther-l',
+      tipo: 'poleras',
+      tags:['poleras', 'marvel', 'wakanda', 'black panther','hombre'],
+      titulo: 'Funko - Boxed Tee - Marvel - Black Panther – L',
+      genero: 'hombre'
 
-    
+    },
+    {
+      descripcion: 'Por más de 60 años esta editorial nos ha entregado historias increíbles y personajes emblemáticos, de la mano y mente de los notables Stan Lee, Jack Kirby y Steve Ditko. Casa de Spiderman, Hulk, Iron Man, X-men, Cuatro fantásticos, los vengadores y muchos otros. Ahora siendo parte de Disney nos siguen sorprendiendo y emocionando con las aventuras que tanto disfrutamos.¡Bienvenidos sean al Universo de Marvel y al extraordinario mundo del Cómic!',
+      imagenes: [
+        '3a76390e-0d13-4ded-923e-2c2a68dd9b54.png',
+        '66997ebb-74fc-4d6c-9ef3-4ab52058238a.png'
+      ],
+      inStock: 8,
+      precio: 12000,
+      tallas: ['L'],
+      slug: 'polera-ob-hombre-manga-corta-roja-marvel-comics',
+      tipo: 'poleras',
+      tags: ['poleras', 'marvel', 'comic', 'hombre'],
+      titulo: 'Polera OB Hombre Manga Corta Roja Marvel Comics L',
+      genero: 'hombre'
+    },
+    {
+      descripcion: 'Los Héroes más poderosos del planeta, un equipo compuesto de personajes extraordinarios; Iron Man, Spiderman, doctor strange, Hulk, Venom. Son tan poderosos que han derrotado a Loki, Ultrón, incluso al mismo Thanos, juntos nada los podrá vencer ¡Vengadores unidos!.¡Bienvenidos sean al Universo de Marvel y al extraordinario mundo del Cómic!',
+      imagenes: [
+        '7cabff3c-4472-400d-9602-9f3c8b5f9b61.png',
+        '2cccea08-2759-4552-99cd-d6af1a54b86f.png'
+      ],
+      inStock: 7,
+      precio: 11190,
+      tallas: ['S','M','L','XL'],
+      slug: 'mango-kids-polera-estampado-marvel',
+      tipo: 'poleras',
+      tags: ['avengers', 'marvel', 'iron man', 'hulk', 'capitan america', 'hombre'],
+      titulo: 'Polera OB Hombre Negro Algodón XXL Black Panther',
+      genero: 'hombre'
+    },
   ]
+  
 }
