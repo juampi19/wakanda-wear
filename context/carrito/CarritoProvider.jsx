@@ -11,7 +11,8 @@ const CARRITO_INITIAL_STATE = {
   numeroProductos: 0,
   subtotal: 0,
   impuesto: 0,
-  total: 0
+  total: 0,
+  carritoCargando: false
 }
 
 export const CarritoProvider = ({ children }) => {

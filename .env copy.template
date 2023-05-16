@@ -2,3 +2,6 @@ MONGO_URL=mongodb://localhost:27017/wakandadb
 
 # Variables publicas
 NEXT_PUBLIC_IMPUESTO=0.15
+
+# SEMILLA jwt
+JWT_SECRET_SEED=SemiLlaJwTWakanDaWeaR2023

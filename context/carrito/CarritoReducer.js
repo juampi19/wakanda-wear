@@ -5,6 +5,7 @@ export const carritoReducer = ( state, action ) => {
     case '[Carrito] - Cargar Carrito desde cookies | storage':
       return {
         ...state,
+        carritoCargando: true,
         carrito: [ ...action.payload ]
       }
     case '[Carrito] - Agregar Producto':

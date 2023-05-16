@@ -1,0 +1,1 @@
+export { default as wakandaApi } from './wakandaApi';

@@ -2,12 +2,26 @@ import { ListaCarrito, ResumenOrden } from "@/components/carrito"
 import { TiendaLayout } from "@/components/layouts"
 import { CarritoContext } from "@/context"
 import { Box, Button, Card, CardContent, Divider, Grid, Typography } from "@mui/material"
-import { useContext } from "react"
+import { useRouter } from "next/router"
+import { useContext, useEffect } from "react"
 
 
 const PaginaCarrito = () => {
 
-  const { numeroProductos } = useContext( CarritoContext );
+  const { numeroProductos, carritoCargando } = useContext( CarritoContext );
+  const router = useRouter();
+
+  useEffect( () => {
+
+    if( carritoCargando && numeroProductos === 0) {
+      router.replace('/carrito/vacia');
+    }
+
+  } , [carritoCargando, numeroProductos, router]);
+
+  if( !carritoCargando || numeroProductos === 0 ) {
+    return (<></>);
+  }
 
   return (
     <TiendaLayout titulo={`Carrito - ${numeroProductos}`} descripcionPagina={'Carrito de compras de la tienda'}>

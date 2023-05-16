@@ -112,7 +112,7 @@ export const NavBar = () => {
           <SearchOutlined />
         </IconButton>
 
-        <NextLink href={ carrito.length ? '/carrito' : '/carrito/vacia'} passHref legacyBehavior>
+        <NextLink href={'/carrito'} passHref legacyBehavior>
             <Link>
               <IconButton>
                 <Badge badgeContent={ numeroProductos > 9 ? '+9' : numeroProductos } color='secondary'>

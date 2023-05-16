@@ -15,6 +15,12 @@
   }
 }
 
+@media (min-width: 900px){ 
+  .each-slide > div {
+    height: 235px;
+  }
+}
+
 @media (min-width: 1024px){ 
   .each-slide > div {
     height: 260px;
