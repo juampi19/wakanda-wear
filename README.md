@@ -23,3 +23,8 @@ npm run dev
 ```
 docker pull mongo:5.0.0
 ```
+
+* Llenar base de datos
+```
+http://localhost:3000/api/entrada
+```
