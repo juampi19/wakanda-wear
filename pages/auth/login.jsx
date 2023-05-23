@@ -1,48 +1,56 @@
-import { useContext, useState } from "react";
-import { AuthContext } from "@/context";
+import {  useEffect, useState } from "react";
+import { getSession, signIn, getProviders } from "next-auth/react";
+import NextLink from 'next/link'
+
+import { useForm } from "react-hook-form";
 
 import { AuthLayout } from "@/components/layouts";
 
-import { wakandaApi } from "@/api";
 import { validacion } from "@/utils";
 
 import { ErrorOutline } from "@mui/icons-material";
-import { Box, Button, Grid, TextField, Typography, Link, Chip } from "@mui/material";
-
-import NextLink from 'next/link'
-import { useForm } from "react-hook-form";
+import { Box, Button, Grid, TextField, Typography, Link, Chip, Divider } from "@mui/material";
 import { useRouter } from "next/router";
+
+
 
 const PaginaLogin = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [mostrarError, setMostrarError] = useState(false);
+  const [providers, setProviders] = useState({});
 
-  const { usuarioLogin } = useContext(AuthContext);
   const router = useRouter();
+
+  useEffect( () => {
+    getProviders().then( prov => {
+      setProviders(prov)
+    } )
+  }, [] )
+
+
 
   const onLoginUser = async (data) => {
     const { email, password } = data;
 
     setMostrarError(false);
 
-    const loginCorrecto = await usuarioLogin(email, password);
-    
+    // const loginCorrecto = await usuarioLogin(email, password);
 
-    if (!loginCorrecto) {
-      setMostrarError(true)
 
-      setTimeout(() => {
-        setMostrarError(false)
-      }, 3000);
+    // if (!loginCorrecto) {
+    //   setMostrarError(true)
+    //   setTimeout(() => {
+    //     setMostrarError(false)
+    //   }, 3000);
 
-      return
-    }
-   
+    //   return
+    // }
+    // //Todo: Redireccionar a la pantalla donde el usuario estaba
+    // const destinacion = router.query.p?.toString() || '/';
+    // router.replace( destinacion );
 
-    //Todo: Redireccionar a la pantalla donde el usuario estaba
-    const destinacion = router.query.p?.toString() || '/';
-    router.replace( destinacion );
+    await signIn( 'credentials', { email, password } )
   }
 
   return (
@@ -104,6 +112,7 @@ const PaginaLogin = () => {
                 Ingresar
               </Button>
             </Grid>
+
             <Grid item xs={12} display={'flex'} justifyContent={'end'}>
               <NextLink href={router.query.p ? `/auth/registrar?p=${router.query.p}`: '/auth/registrar'} passHref legacyBehavior>
                 <Link underline="always">
@@ -111,12 +120,57 @@ const PaginaLogin = () => {
                 </Link>
               </NextLink>
             </Grid>
+
+            <Grid item xs={12} display={'flex'} justifyContent={'center'} flexDirection={'column'}>
+              <Divider sx={{ width: '100%', mb: 2 }}/>
+                {
+                  Object.values( providers ).map( ( provider ) => {
+
+                    if( provider.id === 'credentials' ) return ( <div key={'credentials'}></div> )
+
+                    return (
+                      <Button
+                        key={provider.id}
+                        fullWidth
+                        color="primary"
+                        sx={{ mb: 1 }}
+                        onClick={ () => signIn( provider.id ) }
+                      >
+                        { provider.name }
+                      </Button>
+                    )
+                  } )
+                }
+            </Grid>
           </Grid>
 
         </Box>
       </form>
     </AuthLayout>
   )
+}
+
+
+export const getServerSideProps = async ({ req, query }) => {
+
+  const session = await getSession({ req });
+
+  const { p = '/' } = query
+
+  if( session ){
+    return {
+      redirect: {
+        destination: p.toString(),
+        permanent: false
+      }
+    }
+  }
+
+  return {
+    props: {
+
+    }
+  }
 }
 
 export default PaginaLogin

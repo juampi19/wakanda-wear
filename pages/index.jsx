@@ -1,3 +1,4 @@
+
 import { Card, CardActionArea, CardMedia, Grid, Typography } from '@mui/material'
 import {TiendaLayout} from '../components/layouts';
 import { ListaProductos } from '@/components/productos';
@@ -10,7 +11,7 @@ import { Destacados } from '@/components/destacados/Destacados';
 
 export default function Home() {
 
-  
+
 
   const { productos, isLoading, isError } = useProducts('/productos');
   

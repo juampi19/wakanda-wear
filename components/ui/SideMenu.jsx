@@ -16,8 +16,6 @@ export const SideMenu = () => {
     const { usuario, usuarioConectado, usuarioLogout } = useContext(AuthContext);
     const [search, setSearch] = useState('');
 
-    console.log(usuario, usuarioConectado)
-
 
     //Funcion para navegar al producto buscado
     const onBuscarProdcuto = () => {

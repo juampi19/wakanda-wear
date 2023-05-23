@@ -39,6 +39,18 @@ export const carritoReducer = ( state, action ) => {
         ...state,
         ...action.payload
       }
+
+    case '[Carrito] - obtener direccion desde cookies':
+      return{
+        ...state,
+        direccionCompra: {...action.payload}
+      }
+      
+    case '[Carrito] - actualizar direccion desde cookies':
+      return{
+        ...state,
+        direccionCompra: {...action.payload}
+      }    
     default:
       return state  
   }

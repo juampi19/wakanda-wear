@@ -4,6 +4,7 @@ import { AuthContext } from "@/context";
 import { validacion } from "@/utils";
 import { ErrorOutline } from "@mui/icons-material";
 import { Box, Button, Chip, Grid, Link, TextField, Typography } from "@mui/material"
+import { getSession, signIn } from "next-auth/react";
 import NextLink from 'next/link';
 import { useRouter } from "next/router";
 import { useContext, useState } from "react";
@@ -36,8 +37,10 @@ const PaginaRegistro = () => {
       }, 3000);
     }
 
-    const destinacion = router.query.p?.toString() || '/';
-    router.replace( destinacion );
+    // const destinacion = router.query.p?.toString() || '/';
+    // router.replace( destinacion );
+
+    await signIn( 'credentials', { email, password } )
   }
 
   return (
@@ -122,6 +125,28 @@ const PaginaRegistro = () => {
       </Box>
     </AuthLayout>
   )
+}
+
+export const getServerSideProps = async ({ req, query }) => {
+
+  const session = await getSession({ req });
+
+  const { p = '/' } = query
+
+  if( session ){
+    return {
+      redirect: {
+        destination: p.toString(),
+        permanent: false
+      }
+    }
+  }
+  
+  return {
+    props: {
+      
+    }
+  }
 }
 
 export default PaginaRegistro

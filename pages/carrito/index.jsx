@@ -45,7 +45,12 @@ const PaginaCarrito = () => {
               <ResumenOrden />
 
               <Box sx={{ mt:3 }}>
-                <Button fullWidth color="secondary" className="circular-btn">Checkout</Button>
+                <Button 
+                fullWidth 
+                color="secondary" 
+                className="circular-btn"
+                href="/checkout/direccion"
+                >Checkout</Button>
               </Box>
             </CardContent>
           </Card>

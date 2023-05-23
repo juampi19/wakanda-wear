@@ -1,3 +1,4 @@
+import { useSession, signOut } from 'next-auth/react';
 import { useEffect, useReducer } from 'react'
 import { AuthContext, authReducer } from './'
 import { wakandaApi } from '@/api';
@@ -12,35 +13,45 @@ const AUTH_INITIAL_STATE = {
 export const AuthProvider = ({ children }) => {
 
     const [ state, dispatch ] = useReducer( authReducer, AUTH_INITIAL_STATE );
+    const { data, status } = useSession();
     const router = useRouter();
 
-    //comprobar si hay un usuario registrado
+
     useEffect( () => {
+        if( status === 'authenticated' ){
+            console.log( { data } )
 
-        verificarToken();
-
-    }, [] );
-
-
-    const verificarToken = async () => {
-
-        if( !Cookies.get('token') ) return;
-
-        try {
-            
-            const { data } = await wakandaApi.get( '/user/validacion-jwt' );
-
-            const { token, usuario } = data;
-
-            Cookies.set( 'token', token );
-
-            dispatch({ type: '[Auth] - Login', payload: usuario });
-
-        } catch (error) {
-            Cookies.remove('token');
+            dispatch({ type: '[Auth] - Login', payload: data.user });
         }
+    }, [ status, data ] )
 
-    }
+    //comprobar si hay un usuario registrado
+    // useEffect( () => {
+
+    //     verificarToken();
+
+    // }, [] );
+
+
+    // const verificarToken = async () => {
+
+    //     if( !Cookies.get('token') ) return;
+
+    //     try {
+            
+    //         const { data } = await wakandaApi.get( '/user/validacion-jwt' );
+
+    //         const { token, usuario } = data;
+
+    //         Cookies.set( 'token', token );
+
+    //         dispatch({ type: '[Auth] - Login', payload: usuario });
+
+    //     } catch (error) {
+    //         Cookies.remove('token');
+    //     }
+
+    // }
 
 
     const usuarioLogin = async( email, password ) => {
@@ -97,9 +108,18 @@ export const AuthProvider = ({ children }) => {
     }
 
     const usuarioLogout = () => {
-        Cookies.remove('token');
+        
         Cookies.remove('carrito');
-        router.reload();
+        Cookies.remove('nombre')
+        Cookies.remove('apellido')
+        Cookies.remove('direccion')
+        Cookies.remove('direccion2')
+        Cookies.remove('codigo')
+        Cookies.remove('ciudad')
+        Cookies.remove('pais')
+        Cookies.remove('telefono')
+
+        signOut();
         
     }
 
