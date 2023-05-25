@@ -50,7 +50,18 @@ export const carritoReducer = ( state, action ) => {
       return{
         ...state,
         direccionCompra: {...action.payload}
-      }    
+      }
+      
+    case '[Carrito] - Orden completa':
+      return {
+        ...state,
+        carrito: [],
+        numeroProductos: 0,
+        subtotal: 0,
+        impuesto: 0,
+        total: 0,
+        
+      }  
     default:
       return state  
   }

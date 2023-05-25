@@ -1,9 +1,9 @@
 import { ListaCarrito, ResumenOrden } from "@/components/carrito"
 import { TiendaLayout } from "@/components/layouts"
 import { CarritoContext } from "@/context"
-import { Box, Button, Card, CardContent, Divider, Grid, Link, Typography } from "@mui/material"
+import { Box, Button, Card, CardContent, Chip, Divider, Grid, Link, Typography } from "@mui/material"
 import NextLink from 'next/link'
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ciudades } from '@/utils';
 import Cookies from "js-cookie"
 import { useRouter } from "next/router"
@@ -13,6 +13,9 @@ const PaginaResumen = () => {
   const router = useRouter();
 
   const { direccionCompra, numeroProductos, crearOrden } = useContext( CarritoContext );
+
+  const [realizado, setRealizado] = useState(false);
+  const [mensajeError, setMensajeError] = useState('');
 
   useEffect(() => {
     if( !Cookies.get('nombre') || !Cookies.get('carrito')){
@@ -33,8 +36,19 @@ const PaginaResumen = () => {
     return paisSeleccionado.name
   }
 
-  const onCrearOrden = () => {
-    crearOrden();
+  const onCrearOrden = async() => {
+    setRealizado(true);
+
+    const { hasError, message } = await crearOrden();
+
+    if( hasError ){
+      setRealizado(false);
+
+      setMensajeError( message );
+      return;
+    }
+
+    router.replace(`/ordenes/${ message }`);
   }
 
   return (
@@ -81,13 +95,20 @@ const PaginaResumen = () => {
               </Box>
               <ResumenOrden />
 
-              <Box sx={{ mt:3 }}>
+              <Box sx={{ mt:3 }} display={'flex'} flexDirection={'column'}>
                 <Button 
                 fullWidth 
                 color="secondary" 
                 className="circular-btn"
                 onClick={ onCrearOrden }
+                disabled={ realizado }
                 >Confirmar Orden</Button>
+
+                <Chip 
+                  color="error"
+                  label={mensajeError}
+                  sx={{ display: mensajeError ? 'flex':'none', mt: 2 }}
+                />
               </Box>
             </CardContent>
           </Card>

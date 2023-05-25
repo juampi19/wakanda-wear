@@ -2,7 +2,7 @@ import { CarritoContext } from "@/context"
 import { Grid, Typography } from "@mui/material"
 import { useContext } from "react"
 
-export const ResumenOrden = () => {
+export const ResumenOrden = ({ ordenCantidad, ordneSubtotal, ordenImpuesto,ordenTotal }) => {
 
   const { numeroProductos, subtotal, impuesto, total } = useContext( CarritoContext );
 
@@ -13,6 +13,11 @@ export const ResumenOrden = () => {
     minimumFractionDigits: 0
   });
 
+  const mostrarCantidad = ordenCantidad ? ordenCantidad : numeroProductos;
+  const mostrarSubtotal = ordneSubtotal ? ordneSubtotal : subtotal;
+  const mostrarImpuesto = ordenImpuesto ? ordenImpuesto : impuesto;
+  const mostrarTotal = ordenTotal ? ordenTotal : total;
+
   return (
     <Grid container>
       <Grid item xs={6}>
@@ -20,7 +25,7 @@ export const ResumenOrden = () => {
       </Grid>
 
       <Grid item xs={6} display={'flex'} justifyContent={'end'}>
-        <Typography>{ numeroProductos } { numeroProductos > 1 ? 'productos' : 'producto' }</Typography>
+        <Typography>{ mostrarCantidad } { mostrarCantidad > 1 ? 'productos' : 'producto' }</Typography>
       </Grid>
 
       <Grid item xs={6}>
@@ -28,7 +33,7 @@ export const ResumenOrden = () => {
       </Grid>
 
       <Grid item xs={6} display={'flex'} justifyContent={'end'}>
-        <Typography>{ formatPrice.format( subtotal ) }</Typography>
+        <Typography>{ formatPrice.format( mostrarSubtotal ) }</Typography>
       </Grid>
 
       <Grid item xs={6}>
@@ -36,7 +41,7 @@ export const ResumenOrden = () => {
       </Grid>
 
       <Grid item xs={6} display={'flex'} justifyContent={'end'}>
-        <Typography>{ formatPrice.format( impuesto ) }</Typography>
+        <Typography>{ formatPrice.format( mostrarImpuesto ) }</Typography>
       </Grid>
 
       <Grid item xs={6} sx={{ mt: 2 }}>
@@ -44,7 +49,7 @@ export const ResumenOrden = () => {
       </Grid>
 
       <Grid item xs={6} display={'flex'} justifyContent={'end'} sx={{ mt: 2 }}>
-        <Typography variant="subtitle1">{ formatPrice.format( total ) }</Typography>
+        <Typography variant="subtitle1">{ formatPrice.format( mostrarTotal ) }</Typography>
       </Grid>
 
     </Grid>

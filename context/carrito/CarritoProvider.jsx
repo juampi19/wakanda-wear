@@ -5,6 +5,8 @@ import Cookie from 'js-cookie'
 import { CarritoContext } from './CarritoContext';
 import { carritoReducer } from './CarritoReducer';
 import { wakandaApi } from '@/api';
+import { useSession } from 'next-auth/react';
+import axios from 'axios';
 
 
 const CARRITO_INITIAL_STATE = {
@@ -20,6 +22,7 @@ const CARRITO_INITIAL_STATE = {
 export const CarritoProvider = ({ children }) => {
 
   const [ state, dispatch ] = useReducer( carritoReducer, CARRITO_INITIAL_STATE);
+  const { data, status } = useSession();
 
   /*useEffect leer las cookies y recarge el carrito */
   useEffect( () => {
@@ -142,10 +145,11 @@ export const CarritoProvider = ({ children }) => {
       itemOrden: state.carrito,
       direccionCompra: state.direccionCompra,
       numeroDeItems: state.numeroProductos,
-      subtotal: state.subtotal,
+      subTotal: state.subtotal,
       impuesto: state.impuesto,
       total: state.total,
-      pagado: false
+      pagado: false,
+      usuario: data.user
 
     }
 
@@ -156,8 +160,26 @@ export const CarritoProvider = ({ children }) => {
 
       console.log( data )
 
+      //TODO: dispatch
+      dispatch({ type: '[Carrito] - Orden completa' });
+
+      return {
+        hasError: false,
+        message: data._id
+      }
+
     } catch (error) {
-      console.log( error )
+      if( axios.isAxiosError( error ) ){
+        return {
+          hasError: true,
+          menssage: error.response.data.message
+        }
+      }
+
+      return {
+        hasError: true,
+        message: 'Error no controlado, hable con el administrador'
+      }
     }
 
   }

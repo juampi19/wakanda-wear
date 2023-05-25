@@ -1,7 +1,8 @@
 import { db } from "@/database"
 import { Orden, Producto } from "@/models"
-import { AssistWalkerTwoTone } from "@mui/icons-material"
-import { getSession } from "next-auth/react"
+
+import { getServerSession } from "next-auth"
+// import { getSession } from "next-auth/react"
 
 export default function handler(req, res) {
 
@@ -17,22 +18,21 @@ export default function handler(req, res) {
 
 
 const crearOrden = async ( req, res ) => {
-    const { itemOrden, total } = req.body
+    const { itemOrden, total, usuario } = req.body
 
     //Verificar la sesion del usuario
-    const sesion = await getSession({ req });
+    const sesion = await  getServerSession(req, res);
 
     if( !sesion ) {
         return res.status(401).json({ message: 'Debe estar autenticado para realizar esta acción' });
     }
 
     //Crear un arreglo con los productos que la persona quiere
-    const productosId = itemOrden.map( producto => producto.id );
+    const productosId = itemOrden.map( producto => producto._id );
     await db.connect();
 
     const dbProductos = await Producto.find({ _id: { $in: productosId } });
 
-    console.log({ dbProductos });
 
     try {
         //Comprobamos que los precios del front sean iguales a los del back
@@ -57,10 +57,11 @@ const crearOrden = async ( req, res ) => {
           }
 
           //Todo bien, orden permitida
-          const usuarioId = sesion.user._id;
+          const usuarioId = usuario._id;
           const nuevaOrden = new Orden({ ...req.body, pagado: false, usuario: usuarioId });
 
           await nuevaOrden.save();
+          await db.disconnect();
           return res.status(201).json( nuevaOrden );
 
         

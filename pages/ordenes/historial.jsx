@@ -1,5 +1,7 @@
+import { dbOrdenes } from "@/database";
 import { Button, Chip, Grid, Link, Typography } from "@mui/material";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { getSession } from "next-auth/react";
 import NextLink from 'next/link'
 
 const { TiendaLayout } = require("@/components/layouts");
@@ -30,7 +32,7 @@ const columns = [
     sortable: false,
     renderCell: ( params ) => {
       return (
-        <NextLink href={`/ordenes/${params.row.id}`} passHref legacyBehavior>
+        <NextLink href={`/ordenes/${params.row.idOrden}`} passHref legacyBehavior>
           <Link underline="always">
             Ver orden
           </Link>
@@ -41,22 +43,27 @@ const columns = [
 
 ];
 
-const rows = [
-  { id: 1, pagada: true, nombreCompleto: 'Prueba cliente'  },
-  { id: 2, pagada: false, nombreCompleto: 'Prueba cliente2'  },
-  { id: 3, pagada: true, nombreCompleto: 'Prueba cliente3'  },
-  { id: 4, pagada: false, nombreCompleto: 'Prueba cliente4'  },
-  { id: 5, pagada: true, nombreCompleto: 'Prueba cliente5', },
-]
 
 
-const PaginaHistorial = () => {
+
+
+
+
+const PaginaHistorial = ({ ordenes }) => {
+
+  const rows = ordenes.map( (orden, index) => ({
+    id: index + 1,
+    pagada: orden.pagado,
+    nombreCompleto: `${orden.direccionCompra.nombre} ${orden.direccionCompra.apellido}`,
+    idOrden: orden._id
+  }) )
+
   return (
     <TiendaLayout titulo={'Historial de ordenes'} descripcionPagina={'Historial de ordenes del cliente'}>
 
       <Typography variant="h1" component={'h1'}>Historial de ordenes</Typography>
 
-      <Grid container>
+      <Grid container className="fadeIn">
         <Grid item xs={12} sx={{ height: 650, width: '100%' }}>
 
           <DataGrid 
@@ -76,5 +83,31 @@ const PaginaHistorial = () => {
     </TiendaLayout>
   )
 }
+
+
+// You should use getServerSideProps when:
+// - Only if you need to pre-render a page whose data must be fetched at request time
+export const getServerSideProps = async ({ req }) => {
+  
+  const sesion = await getSession({ req });
+
+  if( !sesion ){
+    return {
+      redirect:{
+        destination: `auth/login?p=/ordenes/historial`,
+        permanent: false
+      }
+    }
+  }
+
+  const ordenes = await dbOrdenes.ordenesPorUsuario( sesion.user._id )
+
+  return {
+    props: {
+      ordenes
+    }
+  }
+}
+
 
 export default PaginaHistorial

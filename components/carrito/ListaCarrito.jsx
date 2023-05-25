@@ -6,7 +6,7 @@ import { CarritoContext } from '@/context';
 
 
 
-export const ListaCarrito = ({ editable }) => {
+export const ListaCarrito = ({ editable = false, productos }) => {
 
   const [ cargarCookies, setCargarCookies ] = useState(false);
 
@@ -20,16 +20,15 @@ export const ListaCarrito = ({ editable }) => {
   const actualizarCantidadCarrito = ( producto, nuevaCantidad ) => {
 
     producto.cantidad = nuevaCantidad;
-    
     actualizarCantidadProducto( producto );
-  
   }
 
 
   const eliminarProducto = ( producto ) => {
-    console.log( producto );
     eliminarProductoCarrito( producto );
   }
+
+  const productosParaMostrar = productos ? productos : carrito
 
   const formatPrice = new Intl.NumberFormat('es-CL', {
     style: 'currency',
@@ -39,7 +38,7 @@ export const ListaCarrito = ({ editable }) => {
   return (
     <>
       {
-        cargarCookies && carrito.map(producto => (
+        cargarCookies && productosParaMostrar.map(producto => (
           <Grid container spacing={2} key={producto.slug + producto.talla} sx={{ mb: 1 }}>
             <Grid item xs={3}>
               {/*Llevar a la pagina del producto */}
