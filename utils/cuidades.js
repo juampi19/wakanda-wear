@@ -1,84 +1,65 @@
 export const ciudades = [{
-    name:'Costa Rica',
-    code: 'CRI'
+    name: "Arica y Parinacota",
+    code: 'AP'
 },
 {
-    name:'Argentina',
-    code: 'ARG'
+    name: "Tarapacá",
+    code: 'TP'
 },
 {
-    name:'Venezuela',
-    code: 'VEN'
+    name: "Antofagasta",
+    code: 'ATF'
 },
 {
-    name:'Guatemala',
-    code: 'GTM'
+    name:"Atacama",
+    code: 'ATC'
 },
 {
-    name:'Mexico',
-    code: 'MEX'
+    name:"Coquimbo",
+    code: 'CB'
 },
 {
-    name:'Belice',
-    code: 'BLZ'
+    name: "Valparaíso",
+    code: 'VP'
 },
 {
-    name:'Puerto Rico',
-    code: 'PRI'
+    name:"Región del Libertador Gral. Bernardo O’Higgins",
+    code: 'BO'
 },
 {
-    name:'Ecuador',
-    code: 'ECU'
+    name:"Región del Maule",
+    code: 'ML'
 },
 {
-    name:'Panamá',
-    code: 'PAN'
+    name:"Región de Ñuble",
+    code: 'ÑB'
 },
 {
-    name:'Honduras',
-    code: 'HND'
+    name:"Región del Biobío",
+    code: 'BB'
 },
 {
-    name:'Bolivia',
-    code: 'BOL'
+    name: "Región de la Araucanía",
+    code: 'ARC'
 },
 {
-    name:'El Salvador',
-    code: 'SLV'
+    name:"Región de Los Ríos",
+    code: 'RS'
 },
 {
-    name:'Peru',
-    code: 'PER'
+    name: "Región de Los Lagos",
+    code: 'LS'
 },
 {
-    name:'Uruguay',
-    code: 'URY'
+    name:"Región Aisén del Gral. Carlos Ibáñez del Campo",
+    code: 'ASN'
 },
 {
-    name:'Colombia',
-    code: 'COL'
+    name: "Región de Magallanes y de la Antártica Chilena",
+    code: 'MG'
 },
 {
-    name:'Republica Dominicana',
-    code: 'DOM'
+    name:"Región Metropolitana de Santiago",
+    code: 'MS'
 },
-{
-    name:'España',
-    code: 'ESP'
-},
-{
-    name:'Paraguay',
-    code: 'PRY'
-},
-{
-    name:'Chile',
-    code: 'CHL'
-},
-{
-    name:'Cuba',
-    code: 'CUB'
-},
-{
-    name:'Nicaragua',
-    code: 'NIC'
-}]
+]

@@ -1,15 +1,46 @@
-import { ListaCarrito, ResumenOrden } from "@/components/carrito"
-import { TiendaLayout } from "@/components/layouts"
 import { dbOrdenes } from "@/database"
-import { CreditCardOffOutlined, CreditScoreOutlined } from "@mui/icons-material"
-import { Box, Button, Card, CardContent, Chip, Divider, Grid, Link, Typography } from "@mui/material"
+import { wakandaApi } from "@/api";
+import { ListaCarrito, ResumenOrden } from "@/components/carrito"
 import { getSession } from "next-auth/react"
-import NextLink from 'next/link'
+import { useRouter } from "next/router";
+
+import { PayPalButtons } from "@paypal/react-paypal-js";
+import { TiendaLayout } from "@/components/layouts"
+import { CreditCardOffOutlined, CreditScoreOutlined } from "@mui/icons-material"
+import { Box, Button, Card, CardContent, Chip, CircularProgress, Divider, Grid, Link, Typography } from "@mui/material"
+import { useState } from "react";
 
 
 const PaginaOrden = ({orden}) => {
 
+  const router = useRouter()
   const { direccionCompra, numeroDeItems, itemOrden } = orden;
+  const [pagando, setPagando] = useState(false)
+
+  const ordenCompletada = async ( detalles ) => {
+
+    if( detalles.status !== 'COMPLETED' ) {
+      return alert( 'No hay pago en Paypal' );
+    }
+
+    setPagando( true );
+
+    try {
+
+      const { data } = await wakandaApi.post( `/ordenes/pago`, {
+        idTransaccion: detalles.id,
+        ordenId: orden._id
+      } );
+
+      router.reload();
+
+      
+    } catch (error) {
+      setPagando( true );
+      console.log(error);
+      alert( 'error' );
+    }
+  }
 
   return (
     <TiendaLayout titulo={`Resumen de la orden`} descripcionPagina={'Resumen de la orden'}>
@@ -17,7 +48,7 @@ const PaginaOrden = ({orden}) => {
       </Typography>
 
       {
-        orden.pagada ? (
+        orden.pagado ? (
           <Chip
             sx={{ my: 2 }}
             label="Orden pagada"
@@ -70,19 +101,55 @@ const PaginaOrden = ({orden}) => {
               />
 
               <Box sx={{ mt: 3 }} display={'flex'} flexDirection={'column'}>
-                {
-                  orden.pagada ? (
-                    <Chip
-                      sx={{ my: 2 }}
-                      label="Orden pagada"
-                      variant="outlined"
-                      color="success"
-                      icon={<CreditScoreOutlined />}
-                    />
-                  ):(
-                    <h1>Pagar</h1>
-                  )
-                }
+                
+                <Box display={'flex'} 
+                    justifyContent={'center'}
+                    className='fadeIn'
+                    sx={{ display: pagando ? 'flex' : 'none' }}
+                >
+                    
+                <CircularProgress />
+                </Box>
+
+                <Box sx={{ display: pagando ? 'none' : 'flex', flex: 1 }} flexDirection={'column'}>
+
+                  {
+                    orden.pagado ? (
+                      <Chip
+                        sx={{ my: 2 }}
+                        label="Orden pagada"
+                        variant="outlined"
+                        color="success"
+                        icon={<CreditScoreOutlined />}
+                      />
+                    ):(
+                      <PayPalButtons 
+                          createOrder={(data, actions) => {
+                            return actions.order.create({
+                                purchase_units: [
+                                    {
+                                        amount: {
+                                            value: `${orden.total}`,
+                                        },
+                                    },
+                                ],
+                            });
+                        }}
+                        onApprove={(data, actions) => {
+                            return actions.order.capture().then((details) => {
+                                ordenCompletada( details );
+
+                                // console.log({ details })
+                                // const name = details.payer.name.given_name;
+                                //alert(`Transaction completed by ${name}`);
+                            });
+                        }}
+                      
+                      />
+                    )
+                  }
+                </Box>
+
                 
                 
               </Box>
@@ -105,7 +172,7 @@ export const getServerSideProps = async ({ req, query }) => {
   if( !sesion ){
     return {
       redirect:{
-        destination: `auth/login?p=/ordenes/${ id }`,
+        destination: `/auth/login?p=/ordenes/${ id }`,
         permanent: false
       }
     }
@@ -116,7 +183,7 @@ export const getServerSideProps = async ({ req, query }) => {
   if( !orden ) {
     return {
       redirect:{
-        destination: `ordenes/historial`,
+        destination: `/ordenes/historial`,
         permanent: false
       }
     }
@@ -125,7 +192,7 @@ export const getServerSideProps = async ({ req, query }) => {
   if( orden.usuario !== sesion.user._id ){
     return {
       redirect:{
-        destination: `ordenes/historial`,
+        destination: `/ordenes/historial`,
         permanent: false
       }
     }

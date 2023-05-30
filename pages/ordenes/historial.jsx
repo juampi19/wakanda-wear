@@ -1,16 +1,25 @@
+import { TiendaLayout } from "@/components/layouts";
 import { dbOrdenes } from "@/database";
 import { Button, Chip, Grid, Link, Typography } from "@mui/material";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { DataGrid} from "@mui/x-data-grid";
 import { getSession } from "next-auth/react";
 import NextLink from 'next/link'
 
-const { TiendaLayout } = require("@/components/layouts");
+
+
+
+const formatPrice = new Intl.NumberFormat('es-CL', {
+  style: 'currency',
+  currency: 'CLP',
+  maximumFractionDigits: 0,
+  minimumFractionDigits: 0
+});
 
 
 const columns = [
   {field: 'id', headerName: 'ID', width: 100},
   {field: 'nombreCompleto', headerName: 'Nombre Completo', width: 300},
-
+  {field: 'totalPagar', headerName: 'Total a pagar', width: 200},
   {
     field: 'pagado', 
     headerName: 'Pagada',
@@ -55,7 +64,8 @@ const PaginaHistorial = ({ ordenes }) => {
     id: index + 1,
     pagada: orden.pagado,
     nombreCompleto: `${orden.direccionCompra.nombre} ${orden.direccionCompra.apellido}`,
-    idOrden: orden._id
+    idOrden: orden._id,
+    totalPagar: formatPrice.format( orden.total )
   }) )
 
   return (
@@ -94,7 +104,7 @@ export const getServerSideProps = async ({ req }) => {
   if( !sesion ){
     return {
       redirect:{
-        destination: `auth/login?p=/ordenes/historial`,
+        destination: `/auth/login?p=/ordenes/historial`,
         permanent: false
       }
     }

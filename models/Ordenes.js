@@ -29,6 +29,7 @@ const ordenSchema = new Schema({
   total: { type: Number, required: true },
   pagado: { type: Boolean, required: true, default: false },
   fechaPago: { type: String },
+  trasaccionId: { type: String }
   
 },{
   timestamps: true

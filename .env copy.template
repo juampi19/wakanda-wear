@@ -11,3 +11,12 @@ NEXTAUTH_SECRET=SemiLlaJwTWakanDaWeaR2023
 # Providers:
 GITHUB_ID=
 GITHUB_SECRET=
+
+# Paypal
+NEXT_PUBLIC_PAYPAL_CLIENT=Ae6MvFEDb-awJrq2IBJDTPof_G1hMvJYdHrvN42U-jQdIONqK0JJO0PcyvAjifjHsqtB_fHUzn3uCoO_
+PAYPAL_SECRET=EP9ruOTPP_IeDGBpiit0Czj7MRiNak1k4lYIUfEmta6cxPJftUpXRoGhdJRYAekHgnTrzoXQyGnw4yAA
+
+# sb-bd2yc26092461@personal.example.com
+
+PAYPAL_OAUTH_URL=https://api-m.sandbox.paypal.com/v1/oauth2/token
+PAYPAL_ORDERS_URL=https://api.sandbox.paypal.com/v2/checkout/orders

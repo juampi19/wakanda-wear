@@ -59,6 +59,7 @@ const crearOrden = async ( req, res ) => {
           //Todo bien, orden permitida
           const usuarioId = usuario._id;
           const nuevaOrden = new Orden({ ...req.body, pagado: false, usuario: usuarioId });
+          nuevaOrden.total = Math.round( nuevaOrden.total * 100 ) / 100;
 
           await nuevaOrden.save();
           await db.disconnect();

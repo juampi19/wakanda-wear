@@ -130,7 +130,7 @@ import bcryptjs from 'bcryptjs';
         '596158-1200-1200.png',
         '596174-1200-1200.png'
       ],
-      inStock: 12,
+      inStock: 0,
       precio: 22000,
       tallas: ['S','M','L','XL'],
       slug: 'poleron-hombre-avengers-logo-negro-marvel',
@@ -178,7 +178,7 @@ import bcryptjs from 'bcryptjs';
         '692573-800-800.png',
         '692574-800-800.png'
       ],
-      inStock: 6,
+      inStock: 0,
       precio: 11000,
       tallas: ['M','L','XL'],
       slug: 'polera-hombre-dead-pool-rostro-negro-marvel',
@@ -275,7 +275,7 @@ import bcryptjs from 'bcryptjs';
         '751511-800-800.png',
         '751534-800-800.png'
       ],
-      inStock: 3,
+      inStock: 0,
       precio: 12990,
       tallas: ['S','M','L','XL'],
       slug: 'polera-mujer-avengers-colours-gris-marvel',
@@ -340,7 +340,7 @@ import bcryptjs from 'bcryptjs';
         '744804-800-800.png',
         '744814-800-800.png'
       ],
-      inStock: 11,
+      inStock: 0,
       precio: 19990,
       tallas: ['S','M','L'],
       slug: 'poleron-niño-spiderman-telarañas-gris-marvel',
@@ -383,23 +383,6 @@ import bcryptjs from 'bcryptjs';
       
     },
     {
-      descripcion: 'Peter Parker, el hombre araña, a pesar de su corta edad este vecino amigable es portador de increíbles habilidades sobrehumanas. Desde que fue mordido por una araña, este trepa-muros tuvo que lidiar con su vida personal de estudiante y combatir el mal por las calles de New York, enfrentando enemigos del calibre de Kingpin hasta los Seis Siniestros. ¿Te gustaría ser parte de la aventura y unirte al increíble Spiderman?',
-      imagenes: [
-        'Imagen2.png',
-        'Imagen1.png',
-        'Imagen3.png'
-      ],
-      inStock: 10,
-      precio: 9990,
-      tallas: ['S','M','L'],
-      slug: 'spider-man-buzo-nino-jogger-algodon',
-      tipo: 'pantalones',
-      tags:['pantalones', 'marvel', 'spiderman', 'buzos','niños'],
-      titulo: 'Spider-Man Buzo Niño Jogger Algodón',
-      genero: 'niños'
-      
-    },
-    {
       descripcion: 'Por más de 60 años esta editorial nos ha entregado historias increíbles y personajes emblemáticos, de la mano y mente de los notables Stan Lee, Jack Kirby y Steve Ditko. Casa de Spiderman, Hulk, Iron Man, X-men, Cuatro fantásticos, los vengadores y muchos otros. Ahora siendo parte de Disney nos siguen sorprendiendo y emocionando con las aventuras que tanto disfrutamos.¡Bienvenidos sean al Universo de Marvel y al extraordinario mundo del Cómic!',
       imagenes: [
         'ba39f4a3-f0c7-4092-82c3-05c6c089cda9.png',
@@ -427,23 +410,6 @@ import bcryptjs from 'bcryptjs';
       tipo: 'pantalones',
       tags:['pantalones', 'marvel', 'spiderman', 'buzos','niños'],
       titulo: 'Pantalon De Buzo Spiderman',
-      genero: 'niños'
-      
-    },
-    {
-      descripcion: 'Peter Parker, el hombre araña, a pesar de su corta edad este vecino amigable es portador de increíbles habilidades sobrehumanas. Desde que fue mordido por una araña, este trepa-muros tuvo que lidiar con su vida personal de estudiante y combatir el mal por las calles de New York, enfrentando enemigos del calibre de Kingpin hasta los Seis Siniestros. ¿Te gustaría ser parte de la aventura y unirte al increíble Spiderman?',
-      imagenes: [
-        'd9d0cdc2-a367-49fe-9155-9baac4d6286d.png',
-        '382bb205-3acc-46e5-bb3a-8e6bfababba6.png',
-        '224bb49d-b121-41b5-8687-bbf9fbe3c0e4.png'
-      ],
-      inStock: 11,
-      precio: 16990,
-      tallas: ['S','M','L'],
-      slug: 'spider-man-poleron-nino-algodon',
-      tipo: 'polerones',
-      tags:['polerones', 'marvel', 'spiderman','niños'],
-      titulo: 'Spider-Man Polerón Niño Algodón',
       genero: 'niños'
       
     },
@@ -484,7 +450,7 @@ import bcryptjs from 'bcryptjs';
         '0f7cf877-edd7-4aef-8b55-ee8fb297bf61.png',
         '210980d3-ca11-43fb-b082-3e05c2ce9f04.png'
       ],
-      inStock: 12,
+      inStock: 0,
       precio: 22000,
       tallas: ['S','M','L','XL'],
       slug: 'poleron-avengers-negro-thor-ionman-hulk-capitanamerica',
@@ -524,21 +490,6 @@ import bcryptjs from 'bcryptjs';
       tags:['polerones', 'marvel', 'wakanda', 'black panther','niños'],
       titulo: 'Poleron Niño Black Panther Vintage Gris Marvel',
       genero: 'niños'
-
-    },
-    {
-      descripcion: 'Por más de 60 años esta editorial nos ha entregado historias increíbles y personajes emblemáticos, de la mano y mente de los notables Stan Lee, Jack Kirby y Steve Ditko. Casa de Spiderman, Hulk, Iron Man, X-men, Cuatro fantásticos, los vengadores y muchos otros. Ahora siendo parte de Disney nos siguen sorprendiendo y emocionando con las aventuras que tanto disfrutamos.',
-      imagenes: [
-        '7599b21a-af47-4820-9a28-823506d7e23b.png'
-      ],
-      inStock: 7,
-      precio: 12990,
-      tallas: ['L'],
-      slug: 'funko-boxed-tee-marvel-black-panther-l',
-      tipo: 'poleras',
-      tags:['poleras', 'marvel', 'wakanda', 'black panther','hombre'],
-      titulo: 'Funko - Boxed Tee - Marvel - Black Panther – L',
-      genero: 'hombre'
 
     },
     {
