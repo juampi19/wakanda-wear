@@ -108,7 +108,7 @@ const PaginaOrden = ({orden}) => {
                     sx={{ display: pagando ? 'flex' : 'none' }}
                 >
                     
-                <CircularProgress />
+                  <CircularProgress />
                 </Box>
 
                 <Box sx={{ display: pagando ? 'none' : 'flex', flex: 1 }} flexDirection={'column'}>

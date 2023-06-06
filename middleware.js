@@ -4,31 +4,27 @@ import { NextResponse } from 'next/server';
 
 export async function middleware( req ){
 
-    // const previousPage = req.nextUrl.pathname;
-
-    // if (previousPage.startsWith('/checkout')) {
-    //     const token = req.cookies.get('token')?.value || '';
-     
-    //     try {
-    //       await jose.jwtVerify(token, new TextEncoder().encode(process.env.JWT_SECRET_SEED));
-    //       return NextResponse.next();
-    //     } catch (error) {
-    //       return NextResponse.redirect(
-    //         new URL(`/auth/login?p=${previousPage}`, req.url)
-    //       );
-    //     }
-    //   }
-
     const session = await getToken({ req, secret: process.env.NEXTAUTH_SECRET })
 
+    const validRoles = ['admin', 'super-user', 'SEO'];
+    const requestedPage = req.nextUrl.pathname;
+
     if( !session ) {
-      const requestedPage = req.nextUrl.pathname;
       const url = req.nextUrl.clone();
       url.pathname = `/auth/login`;
       url.search = `p=${ requestedPage }`;
 
+      if(requestedPage.startsWith("/api/admin"))
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
       return NextResponse.redirect( url );
     }
+
+    if ( requestedPage.startsWith("/admin") && !validRoles.includes(session.user.rol)) 
+    return NextResponse.redirect(new URL("/", req.url));
+  
+    if ( requestedPage.startsWith("/api/admin") && !validRoles.includes(session.user.rol)) 
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
     // return NextResponse.redirect( new URL(), req.url )
     return NextResponse.next();
@@ -37,6 +33,10 @@ export async function middleware( req ){
 
 export const config = {
     matcher: [
-      '/checkout/:path*'
+      '/checkout/:path*',
+      '/orders/:path*',
+      '/api/orders/:path*',
+      '/admin/:path*',
+      '/api/admin/:path*'
     ],
   };
