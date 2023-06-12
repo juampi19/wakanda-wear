@@ -1,4 +1,11 @@
-MONGO_URL=mongodb://localhost:27017/wakandadb
+HOST_NAME=http://localhost:3000/
+
+# mongodb
+user=wakanda-admin
+password=HqEihUJk27ViTHYm
+
+//MONGO_URL=mongodb://localhost:27017/wakandadb
+MONGO_URL=mongodb+srv://wakanda-admin:HqEihUJk27ViTHYm@cluster0.bvvxjcw.mongodb.net/wakandadb
 
 # Variables publicas
 NEXT_PUBLIC_IMPUESTO=0.15
@@ -13,10 +20,13 @@ GITHUB_ID=
 GITHUB_SECRET=
 
 # Paypal
-NEXT_PUBLIC_PAYPAL_CLIENT=Ae6MvFEDb-awJrq2IBJDTPof_G1hMvJYdHrvN42U-jQdIONqK0JJO0PcyvAjifjHsqtB_fHUzn3uCoO_
-PAYPAL_SECRET=EP9ruOTPP_IeDGBpiit0Czj7MRiNak1k4lYIUfEmta6cxPJftUpXRoGhdJRYAekHgnTrzoXQyGnw4yAA
+NEXT_PUBLIC_PAYPAL_CLIENT=
+PAYPAL_SECRET=
 
 # sb-bd2yc26092461@personal.example.com
 
 PAYPAL_OAUTH_URL=https://api-m.sandbox.paypal.com/v1/oauth2/token
 PAYPAL_ORDERS_URL=https://api.sandbox.paypal.com/v2/checkout/orders
+
+# Cloudinary
+CLOUDINARY_URL=cloudinary://252253168251922:XMU2H4k_18CfWKY_zhCGX2_TS1s@ds9gg46za

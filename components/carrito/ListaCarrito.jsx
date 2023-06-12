@@ -46,7 +46,7 @@ export const ListaCarrito = ({ editable = false, productos }) => {
                 <Link>
                   <CardActionArea>
                     <CardMedia
-                      image={`/productos/${producto.imagen}`}
+                      image={ producto.imagen }
                       component={'img'}
                       sx={{ borderRadius: '5px' }}
                     />

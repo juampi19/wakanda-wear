@@ -113,7 +113,12 @@ const PaginaLogin = () => {
               </Button>
             </Grid>
 
-            <Grid item xs={12} display={'flex'} justifyContent={'end'}>
+            <Grid item xs={12} display={'flex'} justifyContent={'space-between'}>
+            <NextLink href={router.query.p ? `/?p=${router.query.p}`: '/'} passHref legacyBehavior>
+                <Link underline="always">
+                  Regresar
+                </Link>
+              </NextLink>
               <NextLink href={router.query.p ? `/auth/registrar?p=${router.query.p}`: '/auth/registrar'} passHref legacyBehavior>
                 <Link underline="always">
                   ¿No tienes cuenta?

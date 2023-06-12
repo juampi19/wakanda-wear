@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/router';
+import React, { useEffect, useRef, useState } from 'react'
+import Swal from 'sweetalert2'
 
 
 import { AdminLayout } from '@/components/layouts';
 
-import { DriveFileRenameOutline, SaveOutlined, UploadOutlined } from '@mui/icons-material';
+import { ArrowBackOutlined, DriveFileRenameOutline, SaveOutlined, UploadOutlined } from '@mui/icons-material';
 import { dbProducto } from '../../../database';
 import { Box, Button, capitalize, Card, CardActions, CardMedia, Checkbox, Chip, Divider, FormControl, FormControlLabel, FormGroup, FormLabel, Grid, ListItem, Paper, Radio, RadioGroup, TextField } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { wakandaApi } from '@/api';
+import { Producto } from '@/models';
 
 
 const tiposValidos  = ['poleras', 'pantalones', 'polerones', 'gorros', 'pantuflas', 'pijamas']
@@ -18,14 +21,15 @@ const tallasValidas = ['XS','S','M','L','XL','XXL','XXXL']
 
 const AdminProductos = ({ producto }) => {
 
+    const fileInputRef = useRef(null)
     const [newTag, setNewTag] = useState('');
     const [guardando, setGuardando] = useState(false);
+    const router = useRouter();
 
    const { register, handleSubmit, formState:{ errors }, getValues, setValue, watch } = useForm({
         defaultValues: producto
    });
 
-   console.log(  )
 
    useEffect( () => {
 
@@ -44,6 +48,8 @@ const AdminProductos = ({ producto }) => {
 
    },[ watch, setValue ] )
 
+
+   //Cambiar las tallas del producto
    const onCambiarTalla = ( talla ) => {
         const tallasActuales = getValues('tallas');
 
@@ -59,6 +65,7 @@ const AdminProductos = ({ producto }) => {
 
    }
 
+   //Agregar un nuevo tag
    const onAgregarTag = ( ) => {
 
        const tag = newTag.trim().toLocaleLowerCase();
@@ -74,14 +81,50 @@ const AdminProductos = ({ producto }) => {
        
    }
 
+   //Borrar los tag del producto
     const onDeleteTag = ( tag  ) => {
         const tagsActualizados = getValues('tags').filter( t => t !== tag );
 
         setValue( 'tags', tagsActualizados, { shouldValidate: true } );
     }
 
+
+    //Seleccionar una imagen 
+    const archivosSeleccionados = async ({ target }) => {
+        //No se selecciono imagenes
+        if( !target.files || target.files.length === 0) {
+            return
+        }
+
+        
+        try {
+
+            for( const file of target.files ){
+
+                const formData = new FormData();
+                formData.append( 'file', file );
+
+                const { data } = await wakandaApi.post( '/admin/subidaArchivo', formData );
+
+                console.log( data.message );
+                setValue( 'imagenes', [...getValues('imagenes'), data.message ], {
+                    shouldValidate: true
+                } )
+            }
+            
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
+    const onBorrarImagen = ( imagen ) => {
+        setValue( 'imagenes', getValues('imagenes').filter( img => img !== imagen ), { shouldValidate: true } )
+    }
+
     const onSubmit = async( form ) => {
 
+    
         
         if( form.imagenes.length < 2 ) {
             return alert( 'Minimo 2 imagenes' );
@@ -89,22 +132,30 @@ const AdminProductos = ({ producto }) => {
         setGuardando( true );
         
         try {
-            console.log( form )
+            
             const { data } = await wakandaApi({
+                method: form._id ? 'PUT' : 'POST',
                 url: '/admin/productos',
-                method: 'PUT',
                 data: form
-            });
+            })
 
-            console.log({ data });
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: `${ form._id ? 'Producto Editando Correctamente': 'Producto Creado Correctamente' }`,
+                showConfirmButton: false,
+                timer: 1500
+              })
+
             if( !form._id ) {
-
+                router.replace(`/admin/productos/${ form.slug }`);
+                
             }else {
                 setGuardando(false);
             }
         } catch (error) {
             console.log( error );
-            setGuardando( true );
+            setGuardando( false );
         }
 
     }
@@ -112,11 +163,20 @@ const AdminProductos = ({ producto }) => {
     return (
         <AdminLayout 
             titulo={'producto'} 
-            subTitulo={`Editando: ${ producto.titulo }`}
+            subTitulo={ producto._id ? `Editando: ${ producto.titulo }` : 'Creando producto'}
             icono={ <DriveFileRenameOutline /> }
         >
             <form onSubmit={ handleSubmit( onSubmit ) }>
-                <Box display='flex' justifyContent='end' sx={{ mb: 1 }}>
+                <Box display='flex' justifyContent='space-between' sx={{ mb: 1 }}>
+                    <Button 
+                        color="secondary"
+                        startIcon={ <ArrowBackOutlined /> }
+                        sx={{ width: '150px' }}
+                        onClick={ () => router.push('/admin/productos') }
+                        >
+                        Regresar
+                    </Button>
+
                     <Button 
                         color="secondary"
                         startIcon={ <SaveOutlined /> }
@@ -308,29 +368,44 @@ const AdminProductos = ({ producto }) => {
                                 fullWidth
                                 startIcon={ <UploadOutlined /> }
                                 sx={{ mb: 3 }}
+                                onClick={ () => fileInputRef.current?.click() }
                             >
                                 Cargar imagen
                             </Button>
+
+                            <input 
+                                type='file'
+                                multiple
+                                accept='image/png, image.gif, image/jpeg'
+                                style={{ display: 'none' }}
+                                ref={ fileInputRef }
+                                onChange={ archivosSeleccionados }
+                            />
 
                             <Chip 
                                 label="Es necesario al 2 imagenes"
                                 color='error'
                                 variant='outlined'
+                                sx={{ display: getValues('imagenes').length < 2 ?' flex' : 'none', mb: 2 } }
                             />
 
                             <Grid container spacing={2}>
                                 {
-                                    producto.imagenes.map( img => (
+                                    getValues('imagenes').map( img => (
                                         <Grid item xs={4} sm={3} key={img}>
                                             <Card>
                                                 <CardMedia 
                                                     component='img'
                                                     className='fadeIn'
-                                                    image={ `/productos/${ img }` }
+                                                    image={ img }
                                                     alt={ img }
                                                 />
                                                 <CardActions>
-                                                    <Button fullWidth color="error">
+                                                    <Button 
+                                                        fullWidth 
+                                                        color="error"
+                                                        onClick={ () => onBorrarImagen( img ) }
+                                                    >
                                                         Borrar
                                                     </Button>
                                                 </CardActions>
@@ -357,8 +432,21 @@ const AdminProductos = ({ producto }) => {
 export const getServerSideProps = async ({ query }) => {
     
     const { slug = ''} = query;
+
+    let producto;
+
+    if( slug === 'nuevo' ) {
+        //Creando un producto
+        const productoTemp = JSON.parse( JSON.stringify( new Producto() ) );
+        delete productoTemp._id;
+        productoTemp.imagenes = [];
+        producto = productoTemp
+
+    }else{
+        //Editando un producto
+        producto = await dbProducto.obtenerProductoPorSlug(slug.toString());
+    }
     
-    const producto = await dbProducto.obtenerProductoPorSlug(slug.toString());
 
     if ( !producto ) {
         return {

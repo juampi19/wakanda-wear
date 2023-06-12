@@ -31,6 +31,10 @@ export const obtenerProductoPorSlug = async( req, res ) => {
     });
   }
 
+  producto.imagenes = producto.imagenes.map( imagen => {
+    return imagen.includes('http') ? imagen : `${ process.env.HOST_NAME }productos/${ imagen }`
+  } );
+
   return res.json( producto );
 
 }

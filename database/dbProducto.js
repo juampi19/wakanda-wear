@@ -14,6 +14,10 @@ export const obtenerProductoPorSlug = async( slug ) => {
   if( !Producto ) {
     return null;
   }
+
+  producto.imagenes = producto.imagenes.map( imagen => {
+    return imagen.includes('http') ? imagen : `${ process.env.HOST_NAME }productos/${ imagen }`
+  } );
   
   return JSON.parse( JSON.stringify( producto ) );
 }
@@ -46,7 +50,15 @@ export const obtenerProductoPorTermino = async( termino ) => {
   
   await db.disconnect();
 
-  return productos;
+  const productosActualizados = productos.map( producto => {
+    producto.imagenes = producto.imagenes.map( imagen => {
+      return imagen.includes('http') ? imagen : `${ process.env.HOST_NAME }productos/${ imagen }`
+    } );
+
+    return producto;
+  } )
+
+  return productosActualizados;
 }
 
 
@@ -58,5 +70,14 @@ export const obtenerTodosProductos = async() => {
 
   await db.disconnect();
 
-  return JSON.parse( JSON.stringify( productos ) );
+ 
+  const productosActualizados = productos.map( producto => {
+    producto.imagenes = producto.imagenes.map( imagen => {
+      return imagen.includes('http') ? imagen : `${ process.env.HOST_NAME }productos/${ imagen }`
+    } );
+
+    return producto;
+  } )
+
+  return JSON.parse( JSON.stringify( productosActualizados ) );
 }

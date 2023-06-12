@@ -7,7 +7,7 @@ export const CardProducto = ({ producto }) => {
   const [isImagenCargada, setIsImagenCargada] = useState(false);
 
   const imagenProducto = useMemo(() => {
-    return isHovered ? `/productos/${producto.imagenes[1]}` : `/productos/${producto.imagenes[0]}`
+    return isHovered ? producto.imagenes[1]: producto.imagenes[0];
 
   }, [isHovered, producto.imagenes]);
 

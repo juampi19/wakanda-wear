@@ -34,5 +34,13 @@ const obtenerProductos = async( req, res ) => {
 
   await db.disconnect();
 
-  return res.status( 200 ).json( productos );
+  const productosActualizados = productos.map( producto => {
+    producto.imagenes = producto.imagenes.map( imagen => {
+      return imagen.includes('http') ? imagen : `${ process.env.HOST_NAME }productos/${ imagen }`
+    } );
+
+    return producto;
+  } )
+
+  return res.status( 200 ).json( productosActualizados );
 }

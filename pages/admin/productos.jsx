@@ -3,8 +3,8 @@ import { PaginaCargando } from "@/components/ui";
 import NextLink from 'next/link'
 
 import { AdminLayout } from '@/components/layouts'
-import { CategoryOutlined, ConfirmationNumberOutlined } from '@mui/icons-material'
-import {  CardMedia, Grid, Link } from '@mui/material'
+import { AddOutlined, CategoryOutlined, ConfirmationNumberOutlined } from '@mui/icons-material'
+import {  Box, Button, CardMedia, Grid, Link } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid'
 
 
@@ -19,7 +19,7 @@ const columns = [
           <CardMedia 
             component={'img'}
             className="fadeIn"
-            image={`/productos/${ row.img }`}
+            image={ row.img }
           />
         </a>
       )
@@ -61,7 +61,7 @@ const PaginaOrdenes = () => {
   {
     id: producto._id,
     img: producto.imagenes[0],
-    titulo: producto.descripcion,
+    titulo: producto.titulo,
     genero: producto.genero,
     tipo: producto.tipo,
     inStock: producto.inStock,
@@ -78,6 +78,16 @@ const PaginaOrdenes = () => {
       subTitulo={'Mantenimiento de productos'}
       icono={<CategoryOutlined />}
     >
+
+      <Box display={'flex'} justifyContent={'end'} sx={{ mb: 2 }}>
+        <Button
+          startIcon={ <AddOutlined /> }
+          color="secondary"
+          href="/admin/productos/nuevo"
+        >
+          Crear Producto
+        </Button>
+      </Box>
 
       <Grid container className="fadeIn">
         <Grid item xs={12} sx={{ height: 700, width: '100%' }}>
