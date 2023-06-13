@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
       <PayPalScriptProvider options={{"client-id": process.env.NEXT_PUBLIC_PAYPAL_CLIENT || ''}}>
         <SWRConfig
           value={{
-            // refreshInterval: 3000,
+            refreshInterval: 3000,
             fetcher: (resource, init) => fetch(resource, init).then(res => res.json())
           }}
         >

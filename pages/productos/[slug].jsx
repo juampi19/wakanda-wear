@@ -195,7 +195,7 @@ export const getStaticProps = async({ params }) => {
     props: {
       producto
     },
-    revalidate : 60 * 60 * 24
+    revalidate : 60
   }
 }
 

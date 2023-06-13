@@ -35,21 +35,6 @@ const PaginaLogin = () => {
 
     setMostrarError(false);
 
-    // const loginCorrecto = await usuarioLogin(email, password);
-
-
-    // if (!loginCorrecto) {
-    //   setMostrarError(true)
-    //   setTimeout(() => {
-    //     setMostrarError(false)
-    //   }, 3000);
-
-    //   return
-    // }
-    // //Todo: Redireccionar a la pantalla donde el usuario estaba
-    // const destinacion = router.query.p?.toString() || '/';
-    // router.replace( destinacion );
-
     await signIn( 'credentials', { email, password } )
   }
 
