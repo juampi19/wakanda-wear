@@ -310,7 +310,6 @@ const AdminProductos = ({ producto }) => {
                     {/* Tags e imagenes */}
                     <Grid item xs={12} sm={ 6 }>
                         <TextField
-                            label="Slug - URL"
                             variant="filled"
                             fullWidth
                             sx={{ mb: 1 }}
