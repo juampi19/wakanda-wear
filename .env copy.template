@@ -5,7 +5,7 @@ user=wakanda-admin
 password=HqEihUJk27ViTHYm
 
 //MONGO_URL=mongodb://localhost:27017/wakandadb
-MONGO_URL=mongodb+srv://wakanda-admin:HqEihUJk27ViTHYm@cluster0.bvvxjcw.mongodb.net/wakandadb
+MONGO_URL=mongodb+srv://wakanda-admin:HqEihUJk27ViTHYm@cluster0.bvvxjcw.mongodb.net/wakandadb2
 
 # Variables publicas
 NEXT_PUBLIC_IMPUESTO=0.15
@@ -16,12 +16,15 @@ JWT_SECRET_SEED=SemiLlaJwTWakanDaWeaR2023
 NEXTAUTH_SECRET=SemiLlaJwTWakanDaWeaR2023
 
 # Providers:
-GITHUB_ID=
-GITHUB_SECRET=
+GITHUB_ID=82c4e697ed0cc282f2af
+GITHUB_SECRET=7b1357fa4e09b0ec57c740f96842f54ba3c65805
+
+GOOGLE_CLIENT_ID=354191702577-av14fp4ompc548ifbs1o79le286j9ofh.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=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
 
 # Paypal
-NEXT_PUBLIC_PAYPAL_CLIENT=
-PAYPAL_SECRET=
+NEXT_PUBLIC_PAYPAL_CLIENT=Ae6MvFEDb-awJrq2IBJDTPof_G1hMvJYdHrvN42U-jQdIONqK0JJO0PcyvAjifjHsqtB_fHUzn3uCoO_
+PAYPAL_SECRET=EP9ruOTPP_IeDGBpiit0Czj7MRiNak1k4lYIUfEmta6cxPJftUpXRoGhdJRYAekHgnTrzoXQyGnw4yAA
 
 # sb-bd2yc26092461@personal.example.com
 
