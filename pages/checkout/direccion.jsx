@@ -160,7 +160,7 @@ const PaginaDireccion = () => {
                   key={Cookie.get('pais') || ciudades[0].code}
                   select
                   variant="filled"
-                  label="País"
+                  label="Región"
                   defaultValue={Cookie.get('pais') || ciudades[0].code}
                   {
                   ...register('pais', {
